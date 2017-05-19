@@ -1,0 +1,36 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Threads}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Parallel structures}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Processes \& Threads}{5}{0}{1}
+\beamer@subsectionintoc {1}{3}{Concurrent Programming}{6}{0}{1}
+\beamer@subsectionintoc {1}{4}{Java Threads}{7}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{1}{overview}{7}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{2}{Declaring Threaded Objects}{8}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{3}{Creating and Starting threaded objects}{9}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{4}{run() vs start()}{10}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{5}{Issues surrounding writing threaded code}{11}{0}{1}
+\beamer@subsectionintoc {1}{5}{Thread Interaction 1}{12}{0}{1}
+\beamer@subsubsectionintoc {1}{5}{1}{join}{12}{0}{1}
+\beamer@subsubsectionintoc {1}{5}{2}{Example of join()}{13}{0}{1}
+\beamer@subsubsectionintoc {1}{5}{3}{Thread interaction}{14}{0}{1}
+\beamer@subsubsectionintoc {1}{5}{4}{Naively parallel algorithms}{15}{0}{1}
+\beamer@subsubsectionintoc {1}{5}{5}{Parallel sort}{16}{0}{1}
+\beamer@subsectionintoc {1}{6}{Sleep/Interrupt}{17}{0}{1}
+\beamer@subsectionintoc {1}{7}{Thread Interaction 2}{18}{0}{1}
+\beamer@subsubsectionintoc {1}{7}{1}{Synchronization}{18}{0}{1}
+\beamer@subsubsectionintoc {1}{7}{2}{Claiming monitor lock}{19}{0}{1}
+\beamer@subsubsectionintoc {1}{7}{3}{Volatile Variables}{21}{0}{1}
+\beamer@subsubsectionintoc {1}{7}{4}{Monitor Locks vs Semaphores}{22}{0}{1}
+\beamer@subsectionintoc {1}{8}{Thread Interaction 3}{23}{0}{1}
+\beamer@subsubsectionintoc {1}{8}{1}{Wait Notify}{23}{0}{1}
+\beamer@subsubsectionintoc {1}{8}{2}{wait()}{24}{0}{1}
+\beamer@subsubsectionintoc {1}{8}{3}{notify() and notifyAll()}{25}{0}{1}
+\beamer@subsubsectionintoc {1}{8}{4}{Wait/Notify-Textual Example}{26}{0}{1}
+\beamer@subsubsectionintoc {1}{8}{5}{Wait/Notify-Code example}{27}{0}{1}
+\beamer@subsubsectionintoc {1}{8}{6}{Wait/Notify Common Problems}{29}{0}{1}
+\beamer@subsubsectionintoc {1}{8}{7}{Wait vs Sleep}{30}{0}{1}
+\beamer@subsectionintoc {1}{9}{Common Problems with Threads}{31}{0}{1}
+\beamer@subsubsectionintoc {1}{9}{1}{Deadlock}{31}{0}{1}
+\beamer@subsubsectionintoc {1}{9}{2}{Starvation}{32}{0}{1}
+\beamer@subsubsectionintoc {1}{9}{3}{Livelock}{33}{0}{1}
+\beamer@subsectionintoc {1}{10}{Summary}{34}{0}{1}

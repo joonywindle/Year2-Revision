@@ -1,0 +1,11 @@
+\frametitle{Join()}
+\Large{Used to wait for another thread to finish}
+\join
+\begin{itemize}
+\item This thread would wait for the calling thread to die before continuing.
+\joinTwo
+\item Waits at most, millis milliseconds for the thread to die.
+\joinThree
+\item Waits at most millis milliseconds plus nanos nanoseconds for the thread to die.
+\end{itemize}
+If two threads are waiting for the other to finish the process then it will never finish.

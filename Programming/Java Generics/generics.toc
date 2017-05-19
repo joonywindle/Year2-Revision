@@ -1,0 +1,21 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Using Generics}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Typing Data Structures/Raw Types}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Issues With Raw Types}{5}{0}{1}
+\beamer@subsectionintoc {1}{3}{Generics}{6}{0}{1}
+\beamer@subsectionintoc {1}{4}{Basics Summary}{7}{0}{1}
+\beamer@sectionintoc {2}{How Generics Work}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Compiling Generic Code}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Code Specialisation - C++}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{Code Sharing: Type Erasure - Java}{10}{0}{2}
+\beamer@sectionintoc {3}{Writing Generic Classes}{11}{0}{3}
+\beamer@subsectionintoc {3}{1}{Simple Generic Data Structures}{11}{0}{3}
+\beamer@subsectionintoc {3}{2}{Generics in nested classes}{12}{0}{3}
+\beamer@subsectionintoc {3}{3}{Enforcing Generic Restrictions}{13}{0}{3}
+\beamer@subsectionintoc {3}{4}{Generic Methods}{15}{0}{3}
+\beamer@subsectionintoc {3}{5}{Wildcards}{16}{0}{3}
+\beamer@subsectionintoc {3}{6}{Why we need wildcards}{18}{0}{3}
+\beamer@subsectionintoc {3}{7}{Wildcard use case}{19}{0}{3}
+\beamer@subsectionintoc {3}{8}{Random Generic things}{20}{0}{3}
+\beamer@sectionintoc {4}{Summary}{21}{0}{4}
+\beamer@subsectionintoc {4}{1}{What we should know...?}{22}{0}{4}
