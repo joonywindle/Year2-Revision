@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Static Nested Classes}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Using Static Nested Classes}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Example}{6}{0}{2}
+\beamer@sectionintoc {3}{Non-Static Nested Classes}{7}{0}{3}
+\beamer@subsectionintoc {3}{1}{Using Inner Classes}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{Inner Class Example}{9}{0}{3}
+\beamer@sectionintoc {4}{Local Inner Classes}{10}{0}{4}
+\beamer@sectionintoc {5}{Anonymous Inner Classes}{11}{0}{5}
+\beamer@sectionintoc {6}{Inheritance with Nested Classes}{12}{0}{6}
+\beamer@sectionintoc {7}{Summary}{13}{0}{7}
