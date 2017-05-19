@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  19 MAY 2017 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  19 MAY 2017 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**nestedClasses.tex
-(./nestedClasses.tex
+**enums.tex
+(./enums.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
@@ -719,9 +719,8 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
-
-(./nestedClasses.aux)
-\openout1 = `nestedClasses.aux'.
+ (./enums.aux)
+\openout1 = `enums.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
 LaTeX Font Info:    ... okay on input line 98.
@@ -816,9 +815,9 @@ LaTeX Info: Redefining \ref on input line 98.
 LaTeX Info: Redefining \pageref on input line 98.
 LaTeX Info: Redefining \nameref on input line 98.
 
-(./nestedClasses.out) (./nestedClasses.out)
+(./enums.out) (./enums.out)
 \@outlinefile=\write5
-\openout5 = `nestedClasses.out'.
+\openout5 = `enums.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 98.
@@ -889,139 +888,57 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \includegraphics on input line 98.
 \c@lstlisting=\count172
- (./nestedClasses.nav)
+ (./enums.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 102.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./nestedClasses.toc)
-[2
-
-] [3
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./enums.toc) [2
 
 ]
-\@verb\staticNest=\box57
+[3
+
+] [4
+
+]
+\@verb\advanced=\box57
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 131
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 135
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 131.
+LaTeX Font Info:    No file OMScmss.fd. on input line 135.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 131.
+(Font)              for symbol `textbraceleft' on input line 135.
 
+[5
 
-Overfull \hbox (9.61284pt too wide) in paragraph at lines 134--135
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+] [6
 
-
-Overfull \hbox (9.61284pt too wide) in paragraph at lines 137--138
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[4
-
-] [5
-
-]
-\@verb\staticExample=\box58
- <staticUML.png, id=227, 579.16376pt x 152.57pt>
-File: staticUML.png Graphic file (type png)
- <use staticUML.png>
-Package pdftex.def Info: staticUML.png used on input line 197.
-(pdftex.def)             Requested size: 173.75046pt x 45.77135pt.
-
-[6
-
- <./staticUML.png>]
-\@verb\innerClass=\box59
- [7
-
-]
-\@verb\interface=\box60
- [8
-
-]
-\@verb\innerEx=\box61
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 261
-.
-LaTeX Font Info:    No file OMLcmss.fd. on input line 261.
-
-
-LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
-(Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 261.
-
-<innerUML.png, id=305, 588.1975pt x 374.39874pt>
-File: innerUML.png Graphic file (type png)
- <use innerUML.png>
-Package pdftex.def Info: innerUML.png used on input line 275.
-(pdftex.def)             Requested size: 176.4606pt x 112.32048pt.
-
-Overfull \vbox (6.22989pt too high) detected at line 275
- []
-
-[9
-
- <./innerUML.png>]
-\@verb\local=\box62
- [10
-
-]
-\@verb\anon=\box63
-\@verb\anonTwo=\box64
-Missing character: There is no â in font cmss8!
-Missing character: There is no € in font cmss8!
-Missing character: There is no œ in font cmss8!
-
-Overfull \hbox (1.96266pt too wide) in paragraph at lines 310--311
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[11
-
-]
-\@verb\inheritance=\box65
-LaTeX Font Info:    Try loading font information for U+msa on input line 346.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 346.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-\@verb\inher=\box66
- [12
-
-] [13
-
-] [14
+] [7
 
 ]
 \tf@nav=\write6
-\openout6 = `nestedClasses.nav'.
+\openout6 = `enums.nav'.
 
 \tf@toc=\write7
-\openout7 = `nestedClasses.toc'.
+\openout7 = `enums.toc'.
 
 \tf@snm=\write8
-\openout8 = `nestedClasses.snm'.
+\openout8 = `enums.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 395.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 395.
-
-(./nestedClasses.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 395.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 395.
-Package rerunfilecheck Info: File `nestedClasses.out' has not changed.
-(rerunfilecheck)             Checksum: 542137F3F41F027B4CD3DAF383AC5771;646.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
+ (./enums.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
+Package rerunfilecheck Info: File `enums.out' has not changed.
+(rerunfilecheck)             Checksum: 83BC9BE79983C408A56050F6955DC991;194.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1030,28 +947,27 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 395.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 17255 strings out of 494910
- 315700 string characters out of 6179836
- 513925 words of memory out of 5000000
- 20105 multiletter control sequences out of 15000+600000
- 9185 words of font info for 34 fonts, out of 8000000 for 9000
+ 17064 strings out of 494910
+ 312801 string characters out of 6179836
+ 423989 words of memory out of 5000000
+ 19952 multiletter control sequences out of 15000+600000
+ 7006 words of font info for 26 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 49i,16n,60p,402b,1241s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt10.pfb>
-Output written on nestedClasses.pdf (14 pages, 165852 bytes).
+ 49i,16n,58p,394b,1240s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on enums.pdf (7 pages, 90605 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 457 compressed objects within 5 object streams
- 40 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
+ 19 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

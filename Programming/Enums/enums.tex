@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Nested Classes]{Nested Classes} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+%-------------------------------------------------------------
+\section{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item \texttt{Enum} types are a means of modelling a variable with a discrete, finite number of values.
+\item They provide type safety, modularity, clarity and flexibility.
+\item They are instances of {\color{red} Anonymous inner classes}.
+\item In C++ they are just integers, and can be treated as such, in Java, they are in fact each an instantiation of an anonymous inner class.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\section{Enum Extra Features}
+\begin{frame}
+\frametitle{Enum Extra Features}
+\begin{itemize}
+\item Because it's a class, it has built in methods such as:
+\begin{itemize}
+\item \texttt{values()}: Returns the possible values as an array.
+\item \texttt{ordinal()}: Returns the rank of the enum as an integer.
+\end{itemize}
+\item \texttt{values()} can be used to iterate over enums using \texttt{for each}.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\defverbatim[colored]\advanced{
+\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+enum Grade{
+// Create instances of Grade:
+FIRST(70), TWO_ONE(60), TWO_TWO(50), THIRD(40), FAIL(0);
+// Define class data:
+	final int boundary; 
+	Grade(int x){
+		boundary=x;
+	}
+	public double getBoundary(){return boundary;}
+}
+
+Grade g=Grade.FIRST;
+System.out.print("g = "+g.boundary);
+\end{lstlisting}
+}
+\section{Advanced usage of Enums}
+\begin{frame}
+\frametitle{Advanced usage of Enums}
+\begin{itemize}
+\item Can essentially give an enum a constructor and treat them as a class, e.g:
+\advanced
+\item They can be mutable (Can change data) generally don't use enums in this case, but can be useful as they can model the singleton pattern.
+\end{itemize}
+\end{frame}
+%--------------------------------------------------------------
+\section{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item Ensure {\color{green} Type safety}, errors detected at compile time.
+\item {\color{red} Clarity}, makes code easier to understand.
+\item {\color{orange} Modularity}, add values to existing enum without changing any code that uses the enum type.
+\item {\color{purple} Flexibility}, built in function are handy.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}
