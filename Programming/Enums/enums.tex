@@ -167,6 +167,36 @@ System.out.print("g = "+g.boundary);
 \item {\color{purple} Flexibility}, built in function are handy.
 \end{itemize}
 \end{frame}
+%----------------------------------------------------------------
+\defverbatim[colored]\ellipseEx{
+\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+public static double average(double...numbers){
+	double s=0;
+	for(int i=0;i<numbers.length;i++)
+		s+=numbers[i];
+	return s/numbers.length;
+}
+
+public static void main(String[] args){
+	double d1=100,d2=33,d3=333;
+	double mean;
+  	mean=average(d1);
+  	mean=average(d1,d2);
+  	mean=average(d1,d2,d3);
+
+}
+\end{lstlisting}
+}
+\section{Ellipsis Operator}
+\begin{frame}
+\frametitle{Ellipsis Operator}
+\begin{itemize}
+\item Allows user to enter a variable number of arguments of a type.
+\item You {\color{red} cannot} assign default values to parameters (You can in C++).
+\item Takes parameters in as an array.
+\ellipseEx
+\end{itemize}
+\end{frame}
 %-----------------------------------------------------------------
 \begin{frame}
 \Huge{\centerline{The End}}

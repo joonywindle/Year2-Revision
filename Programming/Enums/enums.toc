@@ -3,3 +3,4 @@
 \beamer@sectionintoc {2}{Enum Extra Features}{4}{0}{2}
 \beamer@sectionintoc {3}{Advanced usage of Enums}{5}{0}{3}
 \beamer@sectionintoc {4}{Summary}{6}{0}{4}
+\beamer@sectionintoc {5}{Ellipsis Operator}{7}{0}{5}
