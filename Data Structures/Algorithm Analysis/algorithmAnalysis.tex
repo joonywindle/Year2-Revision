@@ -80,6 +80,7 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{listings}
 \usepackage{amsmath}
+\usepackage{algpseudocode,algorithm,algorithmicx}
 
 
 %----------------------------------------------------------------------------------------
@@ -184,9 +185,141 @@ n! & = n \times (n - 1)!,\quad for \quad n > 1
 \item {\color{red} Iterative} is usually more efficient to use.
 \end{itemize}
 \end{frame}
+
+%-----------------------------------------------------------------
+\section{Algorithm Analysis}
+\subsection{Run-time analysis}
+\begin{frame}
+\frametitle{Run-time analysis}
+\begin{itemize}
+\item Strategy:
+\begin{enumerate}
+\item Decide on {\color{green} fundamental operation}.
+\item Decide on the {\color{red}case}.
+\item Count the {\color{orange} number} of occurances given {\color{red}case} (Usually the {\color{magenta} worst-case}).
+\item Form the {\color{purple} run-time complexity function} $t(n)$ where $n$ is the problem size.
+\item Characterise the {\color{brown} order}.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------
+\subsection{Characterising $t(n)$}
+\begin{frame}
+\frametitle{Characterising $t(n)$}
+In order of best to worst:
+\begin{tabular}{|c|c|}
+\hline
+Constant & $t(n) = c$ \\
+\hline
+Logarithmic & $t(n) = log n$\\
+\hline
+Linear & $t(n) = n$ \\
+\hline
+Log Linear & $t(n) = nlogn$ \\
+\hline
+Quadratic & $t(n) = n^2$\\
+\hline
+Polynomial Degree $p$ & $t(n) = n^p$\\
+\hline
+Exponential & $t(n) = 2^n$\\
+\hline
+\end{tabular}
+\end{frame}
+%--------------------------------------------------------------
+\subsection{Useful Summations}
+\begin{frame}
+\frametitle{Useful Summations}
+\begin{itemize}
+\item $\displaystyle\sum_{i=1}^{n}( c) = c \times n$
+\item $\displaystyle\sum_{i=1}^{n}(i) = \frac{1}{2}n(n+1)$
+\item $\displaystyle\sum_{i=1}^{n}(c \times f(i)) = c \times \displaystyle\sum_{i=1}^{n}(f(i))$
+\item $\displaystyle\sum_{i=1}^{n}(f(i) + g(i)) = \displaystyle\sum_{i=1}^{n}(f(i)) + \displaystyle\sum_{i=1}^{n}(g(i))$
+\item $\displaystyle\sum_{i=m}^{n}(f(i)) = \displaystyle\sum_{i=1}^{n}(f(i)) - \displaystyle\sum_{i=1}^{m-1}(f(i))$
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\subsection{Notations}
+\begin{frame}
+\frametitle{Notations}
+\begin{itemize}
+\item $O(f(n)): Big O$
+\begin{itemize}
+\item For all $n$ sufficiently large, $t(n)$ grows at no greater rate than $f(n)$.
+\item This gives the {\color{red} upper-bound} for the rate of growth.
+\end{itemize}
+\begin{itemize}
+\item $\Omega(f(n)): Omega n$
+\begin{itemize}
+\item This denotes the {\color{green} lower-bound} for the rate of growth.
+\end{itemize}
+\item When an algorithm is both $\Omega(f(n))$ and $O(f(n))$ then it is said to be $\Theta(f(n))$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\subsection{Analysis Example}
+\begin{frame}
+\frametitle{Analysis Example - Algorithm}
+\begin{itemize}
+\item A matrix is {\color{green} Upper-triangular} if all the elements below the diagonal are 0.
+\begin{algorithm}[H]
+  \caption{Output true if $M$ is upper-triangular, false otherwise}
+  \begin{algorithmic}[1]
+    \Require{N/A}
+    \Statex
+    \Function{isUpperTriangular}{$M,n$}
+    	\For{$i \leftarrow 2 to n$}
+    		\For{$j \leftarrow 1 to i-1$}
+    			\If{$M[i,j] \neq 0$}
+    				\State\Return{$false$}
+    			\EndIf
+    		\EndFor
+    	\EndFor
+    	\State \Return{$true$}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Analysis Example - Analysis}
+\fontsize{6pt}{7.2}
+\begin{enumerate}
+\item Determine fundamental operation:
+\begin{itemize}
+\tiny
+\item Comparisoon: $M[i,j] \neq 0$
+\end{itemize}
+\item Decide on the case (Worst/Best)
+\begin{itemize}
+\tiny
+\item worst-case, the worst case is that the matrix is upper-triangular.
+\end{itemize}
+\item Determine run-time complexity function $t(n)$ by counting fundamental operations
+\begin{equation}
+\tiny
+\begin{split}
+t(n) & = \displaystyle\sum_{i=2}^{n}\displaystyle\sum_{j = 1}^{i-1}(1)\\
+& = \displaystyle\sum_{i=2}^{n}(i-1)\\
+& = \displaystyle\sum_{i=2}^{n}(i) - \displaystyle\sum_{i=2}^{n}(1)\\
+& = \displaystyle\sum_{i=1}^{n-1}(i+1) - (n-1) \\
+& = \displaystyle\sum_{i=1}^{n-1}(i) + \displaystyle\sum_{i=1}^{n-1}(1) - (n-1) \\
+& = \frac{1}{2}n(n-1)+(n-1)-(n-1)\\
+& = \frac{1}{2}n(n-1)
+\end{split}
+\end{equation}
+\item Give the order characterised by dominant term:
+\begin{itemize}
+\tiny
+\item The worst case time complexity of this is both $O(n^2)$ and $\Omega(n^2)$ and is therefore $\Theta(n^2)$
+\end{itemize}
+\end{enumerate}
+\end{frame}
 %-----------------------------------------------------------------
 
-\begin{frame}
+\begin{frame} 
 \Huge{\centerline{The End}}
 \end{frame}
 

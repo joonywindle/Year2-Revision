@@ -21,10 +21,30 @@
 \headcommand {\beamer@subsectionentry {0}{1}{5}{7}{Tail Recursion}}\headcommand {\beamer@subsectionpages {6}{6}}
 \headcommand {\slideentry {1}{5}{1}{7/7}{Tail Recursion}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {1}{5}{2}{8/8}{Tail Recursion}{0}}
+\headcommand {\sectionentry {2}{Algorithm Analysis}{8}{Algorithm Analysis}{0}}
+\headcommand {\beamer@sectionpages {3}{7}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{8}{Run-time analysis}}\headcommand {\beamer@subsectionpages {8}{7}}
+\headcommand {\slideentry {2}{1}{1}{8/8}{Run-time analysis}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@partpages {1}{8}}
-\headcommand {\beamer@subsectionpages {7}{8}}
-\headcommand {\beamer@sectionpages {3}{8}}
-\headcommand {\beamer@documentpages {8}}
-\headcommand {\def \inserttotalframenumber {8}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{9}{Characterising $t(n)$}}\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\slideentry {2}{2}{1}{9/9}{Characterising $t(n)$}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{10}{Useful Summations}}\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\slideentry {2}{3}{1}{10/10}{Useful Summations}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{11}{Notations}}\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\slideentry {2}{4}{1}{11/11}{Notations}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{12}{Analysis Example}}\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\slideentry {2}{5}{1}{12/12}{Analysis Example}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {2}{5}{2}{13/13}{Analysis Example}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {2}{5}{3}{14/14}{Analysis Example}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@partpages {1}{14}}
+\headcommand {\beamer@subsectionpages {12}{14}}
+\headcommand {\beamer@sectionpages {8}{14}}
+\headcommand {\beamer@documentpages {14}}
+\headcommand {\def \inserttotalframenumber {14}}

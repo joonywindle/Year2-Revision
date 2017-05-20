@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  20 MAY 2017 15:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  20 MAY 2017 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**algorithmAnalysis.tex
-(./algorithmAnalysis.tex
+**ListsStacksQueues.tex
+(./ListsStacksQueues.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
@@ -757,8 +757,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks43
 \c@algorithm=\count173
 )
-(./algorithmAnalysis.aux)
-\openout1 = `algorithmAnalysis.aux'.
+No file ListsStacksQueues.aux.
+\openout1 = `ListsStacksQueues.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
 LaTeX Font Info:    ... okay on input line 101.
@@ -774,7 +774,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
 LaTeX Font Info:    ... okay on input line 101.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
 LaTeX Font Info:    ... okay on input line 101.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -852,10 +851,8 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 101.
 LaTeX Info: Redefining \pageref on input line 101.
 LaTeX Info: Redefining \nameref on input line 101.
-
-(./algorithmAnalysis.out) (./algorithmAnalysis.out)
 \@outlinefile=\write5
-\openout5 = `algorithmAnalysis.out'.
+\openout5 = `ListsStacksQueues.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 101.
@@ -926,121 +923,67 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \includegraphics on input line 101.
 \c@lstlisting=\count181
- (./algorithmAnalysis.nav)
+
+No file ListsStacksQueues.nav.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 105.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./algorithmAnalysis.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+No file ListsStacksQueues.toc.
+[2
 
 ] [3
 
-] [4
-
-]
-[5
-
-] [6
-
-] [7
-
-] [8
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 206.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 206.
-
-[9
-
-] [10
-
-] [11
-
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 283.
-
-[12
-
-]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 319.
-
-[13
-
-] [14
-
 ]
 \tf@nav=\write6
-\openout6 = `algorithmAnalysis.nav'.
+\openout6 = `ListsStacksQueues.nav'.
 
 \tf@toc=\write7
-\openout7 = `algorithmAnalysis.toc'.
+\openout7 = `ListsStacksQueues.toc'.
 
 \tf@snm=\write8
-\openout8 = `algorithmAnalysis.snm'.
+\openout8 = `ListsStacksQueues.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 326.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 326.
- (./algorithmAnalysis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 326.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 326.
-Package rerunfilecheck Info: File `algorithmAnalysis.out' has not changed.
-(rerunfilecheck)             Checksum: 318AFEE9CF33914992144CF5589F191E;750.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
+ (./ListsStacksQueues.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 
+
+Package rerunfilecheck Warning: File `ListsStacksQueues.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ListsStacksQueues.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 326.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  ) 
 Here is how much of TeX's memory you used:
- 17766 strings out of 494910
- 324577 string characters out of 6179836
- 403040 words of memory out of 5000000
- 20597 multiletter control sequences out of 15000+600000
- 16601 words of font info for 62 fonts, out of 8000000 for 9000
+ 17369 strings out of 494910
+ 316349 string characters out of 6179836
+ 395952 words of memory out of 5000000
+ 20269 multiletter control sequences out of 15000+600000
+ 6109 words of font info for 22 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 49i,16n,60p,406b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-si12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on algorithmAnalysis.pdf (14 pages, 208621 bytes).
+ 49i,16n,53p,406b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb>
+Output written on ListsStacksQueues.pdf (3 pages, 54076 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 495 compressed objects within 5 object streams
- 41 named destinations out of 1000 (max. 500000)
- 175 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
+ 7 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
