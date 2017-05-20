@@ -1,1 +1,9 @@
 \beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Lists}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Comparisons}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Amortized Analysis}{4}{0}{1}
+\beamer@sectionintoc {2}{Stacks}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Intro}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Array implementation}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Linked-list implementation}{7}{0}{2}
+\beamer@subsectionintoc {2}{4}{Parenthesis checking}{8}{0}{2}

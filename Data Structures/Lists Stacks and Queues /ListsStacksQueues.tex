@@ -111,14 +111,114 @@ University of East Anglia \\ % Your institution for the title page
 
 %------------------------------------------------------------------
 \section{Lists}
+\subsection{Comparisons}
+\begin{frame}
+\frametitle{Comparisons}
+\begin{itemize}
+\item Is a {\color{purple} linear data structure}.
+\item A List is a collection where the elements are {\color{red} ordered} and therefore each element has an index which is the position in the list. Allows duplicates.
+\item A Set is  an {\color{green} unordered} collection in which no two elements are identical.
+\item A Bag is an {\color{green} unordered} collection in which can have duplicates.
+\end{itemize}
+\begin{tabular}{|c|c|c|}
+\hline
+ & Linked List & Array based \\
+\hline
+ Access & $\Theta(n)$ & $\Theta(1)$ \\
+ \hline
+ Insertion & $O(n)$ & $O(1)$\\
+ \hline
+ Deletion & $O(n)$ & $O(n)$\\
+ \hline
+\end{tabular}
+\end{frame}
+%------------------------------------------------------------------
 \subsection{Amortized Analysis}
 \begin{frame}
 \frametitle{Amortized Analysis}
 \begin{itemize}
+\item In {\color{green} Amortized analysis}, the time taken to execute a sequence is averaged over all the operations executed.
+\item Even though one of the operations in the sequence might take a long time, the average time taken over all operations is small.
+\item This is not the same as the average case.
+\item This guarantees the average performance of each operation in the worst-case.
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------
+\section{Stacks}
+\subsection{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item It's a list structure where all operations occur on one end of the list, known as the {\color{green} top of the stack}.
+\item To add an element is called a {\color{red} push} operation.
+\item To remove an element is called a {\color{purple} pop} operation.
+\item To get the element at the {\color{green} top of the stack} is called a {\color{orange} top} operation. 
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------
+\subsection{Array implementation}
+\begin{frame}
+\frametitle{Array implementation}
+\begin{itemize}
+\item Requires a means of handling {\color{red} array overflow}, i.e. double size of array when full.
+\item \texttt{push()} has an {\color{green} amortized} complexity of $O(1)$ in the worst case.
+\item \texttt{top()} does not alter the stack at all and simply gives the top element, this is $O(1)$ in the worst case.
+\item \texttt{pop()} only alters the last element, nothing is shifted and therefore has complexity $O(1)$ in the worst case.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\subsection{Linked-list implementation}
+\begin{frame}
+\frametitle{Linked-list implementation}
+\begin{itemize}
+\item \texttt{push()} has a complexity of $O(1)$ in the worst case, this is {\color{red} NOT} {\color{green} amortized} due to the lack of array overflow requirement.
+\item \texttt{top()} has $O(1)$ complexity in the worst case.
+\item \texttt{pop()} has $O(1)$ complexity in the worst case.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\subsection{Parenthesis checking}
+\begin{frame}
+\frametitle{Parenthesis checking}
+\begin{itemize}
+\item Stacks can be used to determine is parenthasis match correctly or not.
+e.g. $[
+a
+∗
+(
+b
++
+c
+)
+−{
+d
+−
+a
+}
+/c
++
+e
+]
+/b$
+\item Use a stack to push the left side of the parenthesis and when the right side has been found, pop the parenthasis.
+\item When an item is popped, it is compared to the found parenthesis and if they are of the same type, then it's matching.
 
 \end{itemize}
 \end{frame}
 
+%---------------------------------------------------------------
+\section{Queues}
+\subsection{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item A {\color{green}FIFO (First In First Out)} queue is where the item at the front of the queue is used first.
+\item A new arrival joins the end.
+\item All insertions are made at one end of the list.
+\end{itemize}
+\end{frame}
 %-----------------------------------------------------------------
 
 \begin{frame} 
