@@ -7,3 +7,7 @@
 \beamer@subsectionintoc {2}{2}{Array implementation}{6}{0}{2}
 \beamer@subsectionintoc {2}{3}{Linked-list implementation}{7}{0}{2}
 \beamer@subsectionintoc {2}{4}{Parenthesis checking}{8}{0}{2}
+\beamer@sectionintoc {3}{Queues}{9}{0}{3}
+\beamer@subsectionintoc {3}{1}{Intro}{9}{0}{3}
+\beamer@subsectionintoc {3}{2}{Circular Array implementation}{10}{0}{3}
+\beamer@subsectionintoc {3}{3}{Linked List implementation}{11}{0}{3}

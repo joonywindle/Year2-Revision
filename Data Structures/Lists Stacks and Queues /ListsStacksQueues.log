@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  20 MAY 2017 21:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  21 MAY 2017 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,6 +970,12 @@ Missing character: There is no ’ in font cmss10!
 
 ] [9
 
+] [10
+
+] [11
+
+] [12
+
 ]
 \tf@nav=\write6
 \openout6 = `ListsStacksQueues.nav'.
@@ -980,25 +986,31 @@ Missing character: There is no ’ in font cmss10!
 \tf@snm=\write8
 \openout8 = `ListsStacksQueues.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
  (./ListsStacksQueues.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 216.
-Package rerunfilecheck Info: File `ListsStacksQueues.out' has not changed.
-(rerunfilecheck)             Checksum: EAF273D4550418050742BCC6E6AB2798;475.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
 
+
+Package rerunfilecheck Warning: File `ListsStacksQueues.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ListsStacksQueues.out':
+(rerunfilecheck)             Before: 6A02D865D0551160E7C7E85CD070E6B6;651
+(rerunfilecheck)             After:  A5B65C8945884BA9C789F676C448CAE1;728.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
  ) 
 Here is how much of TeX's memory you used:
- 17583 strings out of 494910
- 320568 string characters out of 6179836
- 397058 words of memory out of 5000000
- 20435 multiletter control sequences out of 15000+600000
+ 17607 strings out of 494910
+ 320812 string characters out of 6179836
+ 397061 words of memory out of 5000000
+ 20449 multiletter control sequences out of 15000+600000
  10732 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  49i,16n,60p,406b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1010,10 +1022,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ListsStacksQueues.pdf (9 pages, 99172 bytes).
+Output written on ListsStacksQueues.pdf (12 pages, 108530 bytes).
 PDF statistics:
- 346 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
- 27 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 445 PDF objects out of 1000 (max. 8388607)
+ 406 compressed objects within 5 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

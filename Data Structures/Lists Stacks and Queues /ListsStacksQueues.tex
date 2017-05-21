@@ -216,7 +216,32 @@ e
 \begin{itemize}
 \item A {\color{green}FIFO (First In First Out)} queue is where the item at the front of the queue is used first.
 \item A new arrival joins the end.
-\item All insertions are made at one end of the list.
+\item All insertions are made at one end of the list, known as the {\color{red} rear of the queue}. 
+\item The insertion method is known as an {\color{orange} enqueue} operation.
+\item All remoovals happen at the other end of the wueue known as the {\color{purple} the front of the queue}. 
+\item The removal method is known as a {\color{magenta} dequeue} operation.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\subsection{Circular Array implementation}
+\begin{frame}
+\frametitle{Circular Array implementation}
+\begin{itemize}
+\item Representing a queue in a traditional array such that the queue elements march through the array in one direction is not very convenient.
+\item This keeps track of the front rear points of the queue pointing to their respective positions.
+\item {\color{orange} enqueue} adds the element to \texttt{rearPos + 1\%arrSize}.
+\item If the queue length is equal to \texttt{arrSize}, then the array is doubled in size, when copying elements over, they are copied in queue order and the front and rear keep pointing to their resepctive elements.
+\item {\color{magenta} dequeue} simply removes the element pointed at by the \texttt{frontPos} and increments the front pointer to \texttt{frontPos = (frontPos + 1)\% arrSize}.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\subsection{Linked List implementation}
+\begin{frame}
+\frametitle{Linked List implementation}
+\begin{itemize}
+\item Keep track of front and rear nodes.
+\item {\color{orange} enqueue} Will create a new node and the current rear node points to the new node. The rear is then changed to point at the new node.
+\item {\color{magenta} dequeue} simply removes the node pointed at by front and front points at the next node.
 \end{itemize}
 \end{frame}
 %-----------------------------------------------------------------
