@@ -109,8 +109,77 @@ University of East Anglia \\ % Your institution for the title page
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
 
+%-----------------------------------------------------------------
+\section{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item Exceptional events that stop the normal flow of execution.
+\item Execution stops at the exact point of exception.
+\item {\color{red} Exception object} is created with information about the event.
+\item The exception is {\color{green}thrown} down the method stack until it is either {\color{orange} caught} or the program terminates.
+\item All built in exceptions inherit from the \texttt{Exception} class.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\try{
+\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+try{
+// Do stuff that might throw an exception
+}
+catch(Exception e){ // Thrown exception is stored here
+// Corrective action goes here
+}
+finally {
+// This will always execute
+}
+// Method continues here.
+\end{lstlisting}
+}
+\section{Try-Catch}
+\begin{frame}
+\frametitle{Try-Catch}
+\try
+\begin{itemize}
+\item Variables declared within the try have scope limitation.
+\item Can catch anywhere up the stack.
+\item \texttt{finally} always executes, commonly used to clean up, close streams etc.
+\item Exceptions can be checked or unchecked.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\section{Checked vs Unchecked}
+\begin{frame}
+\frametitle{Checked vs Unchecked}
+\begin{itemize}
+\item {\color{green} Checked} makes sure the code that may throw the \texttt{Exception} has to be surrounded by try-catch or has a throws clause. 
+\item {\color{red} Unchecked} means that the code may throw an exception, but doesn't have to be enclosed in try-catch or throws. e.g. \texttt{c = a/b} could throw an exception if b is 0, but it doesn't need checks.
+\item Exceptions inheriting from \texttt{RunTimeException} are by default {\color{red}unchecked}.
+\item Can make any Exception {\color{green} checked} by adding \texttt{\color{purple} throws}.
+\end{itemize}
+\end{frame}
 %------------------------------------------------------------------
-
+\section{Advantages}
+\begin{frame}
+\frametitle{Advantages}
+\begin{itemize}
+\item Can seperate Error-Handling code from application code.
+\item Can propagate exceptions up the stack and therefore handle them in a suitable place (e.g. GUI).
+\item Can use inheritance to group types of exception and thus increase the information to convey.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\section{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item Are Exceptional events that disrupt the normal flow of execution.
+\item Thrown using \texttt{throws}.
+\item Caught in a \texttt{try-catch-finally} block.
+\item Can be propagated up the stack and caught at any point.
+\item Seperate error-handling code from application code.
+\end{itemize}
+\end{frame}
 %-----------------------------------------------------------------
 
 
