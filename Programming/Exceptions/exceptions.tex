@@ -110,55 +110,7 @@ University of East Anglia \\ % Your institution for the title page
 \end{frame}
 
 %------------------------------------------------------------------
-\section{Intro}
-\begin{frame}
-\frametitle{Intro}
-\begin{itemize}
-\item The ability for a class or object to examine itself.
-\item Reflection allows dynamic information about:
-\begin{itemize}
-\item Data fields
-\item Methods
-\item Constructors.
-\end{itemize}
-\item \texttt{\color{red}Class} contains the relevant tools for reflection.
-\end{itemize}
-\end{frame}
-%----------------------------------------------------------------
-\section{Class methods}
-\begin{frame}
-\frametitle{Class methods}
-\begin{itemize}
-\item \texttt{getName()} - Returns the name of the class, e.g. \texttt{java.lang.String} or \texttt{Deck}.
-\item \texttt{getDeclaredMethods()} - Returns the public methods in the object.
-\item \texttt{getDeclaredFields()} - Returns the public fields of the object.
-\end{itemize}
-\end{frame}
-%----------------------------------------------------------------
-\defverbatim[colored]\example{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
-public static void someMethod(Object o)
-{
-	Class c = o.getClass();// Gets the class
-	// gets the method in position 0 of declared methods
-	Method method=c.getDeclaredMethods()[0];
-	try{
-		Object obj=c.newInstance();// Create new instance of Class returned
-		method.invoke(obj, args); // Call method on obj, with args as parameters
-System.out.println(" Method name is“ +method.getName()+ "return is ="+method.invoke(obj)); 
-}catch(Exception e){ System.out.println(" Exception = "+e); }
-}
-\end{lstlisting}
-}
-\subsection{Calling methods}
-\begin{frame}
-\frametitle{Calling methods}
-\begin{itemize}
-\item Not only possible to inspect the object, can also use information found.
-\example
-\item Can do a lot more with reflection.
-\end{itemize}
-\end{frame}
+
 %-----------------------------------------------------------------
 
 

@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Class methods}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Calling methods}{5}{0}{2}
