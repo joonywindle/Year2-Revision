@@ -87,7 +87,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Iterators]{Iterators} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Binary Trees]{Binary Trees} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Jonathan Windle} % Your name
 \institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -114,7 +114,30 @@ University of East Anglia \\ % Your institution for the title page
 \begin{frame}
 \frametitle{Intro}
 \begin{itemize}
-\item Iterate over a collection of objects.
+\item Tree structures are {\color{green}Non-Linear}.
+\item A {\color{red} Binary Tree} $T$, on a set of elements $E$ is either:
+\begin{itemize}
+\item empty, or
+\item consists of a finite collection of nodes, each containing an element of $E$, and which contains a particular node called the {\color{purple} root} of $T$, with the remaining nodes of $T$ partitioned into to binary tress, called {\color{orange} left sub-tree} and {\color{magenta} right sub-tree} respectively.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\subsection{Terminology}
+\begin{frame}
+\frametitle{Terminology}
+\begin{itemize}
+\item {\color{blue} nodes/vertices} - contain elements of $T$.
+\item {\color{blue} parent} - Every node except for the root has a unique parent node.
+\item {\color{blue} child} - if $p$ is the parent of $c$ thee $c$ is a child of $p$.
+\item {\color{blue} siblings} - two nodes are siblings if they have the same parent node.
+\item {\color{blue} ancestor} - Node $a$ is an ancestor of node $d$ if either $a$ is the parent of $d$ or $a$ is the parent of an ancestor of $d$.
+\item {\color{blue} descendant} - Node $d$ is a descendant of $a$ if $a$ is an ancestor of $d$.
+\item {\color{blue} leaf} - a node with no child.
+\item {\color{blue} external} - another name for a leaf node.
+{\color{blue} internal} - a non-leaf node, i.e. a nde with  at least one child.
+\item {\color{blue} level} - if $n$ is the root node, then $level(n) = 0$, otherwise $level(n) = level(parent(n))+1$.
+\item {\color{blue} height} - $height(T)=max_{n \in T}level(n)$ (Height $T$ is also called the level of the tree).
 \end{itemize}
 \end{frame}
 %-----------------------------------------------------------------
