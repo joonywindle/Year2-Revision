@@ -3,18 +3,48 @@
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\sectionentry {1}{Intro}{3}{Intro}{0}}
+\headcommand {\sectionentry {1}{Binary Trees}{3}{Binary Trees}{0}}
 \headcommand {\beamer@sectionpages {1}{2}}
 \headcommand {\beamer@subsectionpages {1}{2}}
-\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Intro}}\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\slideentry {1}{1}{1}{3/3}{Intro}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Terminology}}\headcommand {\beamer@subsectionpages {3}{3}}
-\headcommand {\slideentry {1}{1}{1}{4/4}{Terminology}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{4}{Terminology}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {1}{2}{1}{4/4}{Terminology}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {1}{1}{2}{5/5}{Terminology}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{5}{Traversing a Tree}}\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\slideentry {1}{3}{1}{5/5}{Traversing a Tree}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@partpages {1}{5}}
-\headcommand {\beamer@subsectionpages {4}{5}}
+\headcommand {\sectionentry {2}{Binary Search Trees}{6}{Binary Search Trees}{0}}
 \headcommand {\beamer@sectionpages {3}{5}}
-\headcommand {\beamer@documentpages {5}}
-\headcommand {\def \inserttotalframenumber {5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{Intro}}\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\slideentry {2}{1}{1}{6/6}{Intro}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Insertion}}\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\slideentry {2}{2}{1}{7/7}{Insertion}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{8}{Deletion}}\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\slideentry {2}{3}{1}{8/8}{Deletion}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {2}{3}{2}{9/9}{Deletion}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{10}{Balanced Binary Search Trees}}\headcommand {\beamer@subsectionpages {8}{9}}
+\headcommand {\slideentry {2}{4}{1}{10/10}{Balanced Binary Search Trees}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{4}{1}{11}{Balance example}}
+\headcommand {\slideentry {2}{4}{2}{11/11}{Balanced Binary Search Trees}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{4}{2}{12}{Case +1 node becomes unbalanced}}
+\headcommand {\slideentry {2}{4}{3}{12/12}{Balanced Binary Search Trees}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{4}{3}{13}{Transform unbalanced to balanced}}
+\headcommand {\slideentry {2}{4}{4}{13/13}{Balanced Binary Search Trees}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {2}{4}{5}{14/14}{Balanced Binary Search Trees}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@partpages {1}{14}}
+\headcommand {\beamer@subsectionpages {10}{14}}
+\headcommand {\beamer@sectionpages {6}{14}}
+\headcommand {\beamer@documentpages {14}}
+\headcommand {\def \inserttotalframenumber {14}}
