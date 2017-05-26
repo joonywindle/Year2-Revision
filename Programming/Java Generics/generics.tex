@@ -80,6 +80,18 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{listings}
 
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -116,13 +128,13 @@ University of East Anglia \\ % Your institution for the title page
 
 \subsection{Typing Data Structures/Raw Types} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 \defverbatim[colored]\arr{
-\begin{lstlisting}[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\ttfamily]
 ArrayList arr = new ArrayList();
 \end{lstlisting}
 }
 
 \defverbatim[colored]\arrTwo{
-\begin{lstlisting}[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\ttfamily]
 arr.add("Boop");
 arr.add(8004);
 String str = (String) arr.get(0);
@@ -243,7 +255,7 @@ String str = (String) arr.get(0);
 %--------------------------------------------------------
 \subsection{Generics in nested classes}
 \defverbatim[colored]\genNest{
-\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
 public class Pair<K,V> {
 	public class Inner {
     	K in1; // K is same type as outer class 
@@ -253,7 +265,7 @@ public class Pair<K,V> {
 \end{lstlisting}
 }
 \defverbatim[colored]\genNestTwo{
-\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
 public class Pair<K,V> {
 	public static class Inner {
     // Cannot reference either K or V due to static instance
@@ -277,7 +289,7 @@ public class Pair<K,V> {
 \end{frame}
 %--------------------------------------------------------
 \defverbatim[colored]\genCom{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class Pair<K,V> implements Comparable<K,V>> {
 	private K key;
     private V value;
@@ -288,7 +300,7 @@ public class Pair<K,V> implements Comparable<K,V>> {
 \end{lstlisting}
 }
 \defverbatim[colored]\genComTwo{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class Pair<K,V> implements Comparable<K extends Comparable,V>> {
 	private K key;
     private V value;
@@ -320,7 +332,7 @@ public class Pair<K,V> implements Comparable<K extends Comparable,V>> {
 \end{frame}
 %--------------------------------------------------------
 \defverbatim[colored]\genMeth{
-\begin{lstlisting}[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\ttfamily]
 String[] sa = new String[10];
 insertionSort(sa); // Infers String type
 
@@ -354,7 +366,7 @@ insertionSort(in); // Infers integer type
 \end{frame}
 %--------------------------------------------------------
 \defverbatim[colored]\wild{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 Wrapper<?> raw; // Unbounded, any type.
 Wrapper<? super Number> up; // Number or any superclass
 Wrapper<? extends Number> down; // Number or any subclass 
@@ -373,14 +385,14 @@ down = new Wrapper<Double>(); // This is also OK.
 \end{frame}
 %--------------------------------------------------------
 \defverbatim[colored]\wildAll{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 LinkedList<Number> m2 = new LinkedList<>();
 m2.add(new Integer(11)); // Is allowed
 m2.add(new Double(2.5)); // Is allowed
 \end{lstlisting}
 }
 \defverbatim[colored]\wildNot{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 LinkedList<Number> m = new LinkedList<Integer>(); // Not allowed
 LinkedList<Number> m = new LinkedList<Double>(); // Not allowed
 \end{lstlisting}
@@ -401,7 +413,7 @@ LinkedList<Number> m = new LinkedList<Double>(); // Not allowed
 
 %--------------------------------------------------------
 \defverbatim[colored]\wildUse{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 // This can only be used for Object arrays.
 static void printList(ArrayList<Object> list) {
 	for (Object elem : list) {
@@ -416,7 +428,7 @@ printList(strArr); // This won't compile.
 }
 
 \defverbatim[colored]\wildUseTwo{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 // This can be used with ANY ArrayList
 static void printList(ArrayList<?> list) {
 	for (Object elem : list) {

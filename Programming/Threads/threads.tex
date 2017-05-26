@@ -78,7 +78,20 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
 
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -93,7 +106,7 @@ University of East Anglia \\ % Your institution for the title page
 \textit{J.Windle@uea.ac.uk} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date7
-\usepackage{listings}
+
 \begin{document}
 
 \begin{frame}
@@ -227,7 +240,7 @@ University of East Anglia \\ % Your institution for the title page
 \item A java thread class implements the {\color{purple} Runnable} interface. Therefore every {\color{green} Thread} instance has a method:
 \end{itemize}
 \defverbatim[colored]\lstI{
-\begin{lstlisting}[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\ttfamily]
 public void run() {...}
 \end{lstlisting}
 }
@@ -241,7 +254,7 @@ public void run() {...}
 %------------------------------------------------
 
 \defverbatim[colored, width=.5\textwidth]\lstI{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny, breaklines = false]
 public class MyThread extends Thread{
 	public void run(){
     	for(int i = 0; i < 13; i++)
@@ -253,7 +266,7 @@ public class MyThread extends Thread{
 }
 
 \defverbatim[colored, width=.5\textwidth]\lstIV{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny, breaklines = false]
 public class MyRunnable implements Runnable{
 	public void run(){
     	for(int i = 0; i < 13; i++)
@@ -295,7 +308,7 @@ public class MyRunnable implements Runnable{
 \subsubsection{Creating and Starting threaded objects}
 
 \defverbatim[colored, width=.5\textwidth]\thread{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny,breaklines = false]
 public static void main(){
     	MyThread x = new MyThread();
         x.start();
@@ -305,7 +318,7 @@ public static void main(){
 }
 
 \defverbatim[colored, width=.5\textwidth]\runnable{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny,breaklines = false]
 public static void main(){
     	MyRunnable x = new MyRunnable();
         (new Thread(x)).start();
@@ -364,17 +377,17 @@ public static void main(){
 \end{frame}
 %-----------------------------------------------------------------------------------
 \defverbatim[colored]\join{
-\begin{lstlisting}[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\ttfamily]
 void join()
 \end{lstlisting}
 }
 \defverbatim[colored]\joinTwo{
-\begin{lstlisting}[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\ttfamily]
 void join(long millis)
 \end{lstlisting}
 }
 \defverbatim[colored]\joinThree{
-\begin{lstlisting}[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\ttfamily]
 void join(long millis, int nanos)
 \end{lstlisting}
 }
@@ -396,7 +409,7 @@ If two threads are waiting for the other to finish the process then it will neve
 
 %-----------------------------------------------------------------------------------
 \defverbatim[colored]\joinExample{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public static void main(string[] args) {
 	MyThread t1 = new MyThread("Thread 1",1);
 	MyThread t2 = new MyThread("Thread 2",2);
@@ -422,7 +435,8 @@ public static void main(string[] args) {
 \subsubsection{Example of join()}
 \begin{frame}
 \frametitle{Example of join()}
-Code where the \lstinline[language=Java,basicstyle=\ttfamily,keywordstyle=\color{blue}]{void main()} method waits for two threads.
+Code where the \lstinline[style = customjava,basicstyle=\ttfamily]{
+void main()} method waits for two threads.
 \joinExample
 The {\color{orange}main} thread has been forced to wait for {\color{red} t1} and {\color{green} t2} to finish, but {\color{red} t1} and {\color{green} t2} are still running {\color{blue} concurrently} and therefore run completely independently. \\
 Enforces {\color{purple} sequential} behaviour on {\color{blue} concurrent} code
@@ -476,7 +490,7 @@ The static variable, sharedMem is accessible through any instance of MyThread,  
 \end{frame}
 %----------------------------------------------------------------------------------
 \defverbatim[colored]\pSort{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class ThreadSort extends Thread {
 	public static Comparable data[]; //Shared across all threads
     int start; //Local start position
@@ -547,7 +561,7 @@ public static void main(String [] args) {
 \end{frame}
 %----------------------------------------------------------------------------------
 \defverbatim[colored]\syncBlock{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 private SharedMemClass names;
 public void run() {
 	synchronized(names){ //Nothing else can touch names until after this block
@@ -558,7 +572,7 @@ public void run() {
 }
 
 \defverbatim[colored]\syncMeth{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class SharedMemClass {
 	synchronized public void alter(){}//Synchronized method
 }
@@ -587,7 +601,7 @@ Sometimes a method only needs mutual exclusion for a part, such as to read the m
 
 %----------------------------------------------------------------------------------
 \defverbatim[colored]\syncClass{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class SharedMemClass {
 	synchronized public void alter(){}//Synchronized method
     public static ArrayList<String> str = new ArrayList<>();
@@ -603,7 +617,7 @@ public class Modifier extends Thread() {
 \end{lstlisting}
 }
 \defverbatim[colored]\syncStatic{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class SharedMemClass {
 	synchronized static public void alter(){}//Synchronized method
     public static ArrayList<String> str = new ArrayList<>();
@@ -655,7 +669,7 @@ public class Modifier extends Thread() {
 \subsection{Thread Interaction 3}
 \subsubsection{Wait Notify}
 \defverbatim[colored]\waitNotify{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 if(something)//Check condition before waiting.
 	someObject.wait();
 //Continues from here after notify
@@ -729,7 +743,7 @@ Waits for a producer to make a good, then purchase it.
 %----------------------------------------------------------------------------------
 \subsubsection{Wait/Notify-Code example}
 \defverbatim[colored]\producer{
-\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
 public class Producer extends Thread {
 	Product good=null;
     int nosGoods = 0;
@@ -763,7 +777,7 @@ public class Producer extends Thread {
 
 %----------------------------------------------------------------------------------
 \defverbatim[colored]\consumer{
-\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
 public class Consumer extends Thread {
 	Producer p;
     ArrayList<Product> goods;
@@ -796,7 +810,7 @@ public class Consumer extends Thread {
 %----------------------------------------------------------------------------------
 \subsubsection{Wait/Notify Common Problems}
 \defverbatim[colored]\locks{
-\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
 synchronized (object1);
 synchronized (object2) {
 	object2.wait();//object2 lock released. object1 still locked

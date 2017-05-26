@@ -80,6 +80,19 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{listings}
 
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -131,7 +144,7 @@ University of East Anglia \\ % Your institution for the title page
 \end{frame}
 %------------------------------------------------------------------
 \defverbatim[colored]\advanced{
-\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava, basicstyle=\scriptsize]
 enum Grade{
 // Create instances of Grade:
 FIRST(70), TWO_ONE(60), TWO_TWO(50), THIRD(40), FAIL(0);
@@ -169,7 +182,7 @@ System.out.print("g = "+g.boundary);
 \end{frame}
 %----------------------------------------------------------------
 \defverbatim[colored]\ellipseEx{
-\begin{lstlisting}[language=Java,basicstyle=\scriptsize,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
 public static double average(double...numbers){
 	double s=0;
 	for(int i=0;i<numbers.length;i++)

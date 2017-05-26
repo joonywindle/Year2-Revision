@@ -82,6 +82,18 @@
 \usepackage{amsmath}
 \usepackage{algpseudocode,algorithm,algorithmicx}
 
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -123,7 +135,7 @@ University of East Anglia \\ % Your institution for the title page
 \end{frame}
 %-----------------------------------------------------------------
 \defverbatim[colored]\try{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 try{
 // Do stuff that might throw an exception
 }

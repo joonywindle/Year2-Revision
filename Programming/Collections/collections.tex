@@ -1,0 +1,295 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+% \usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+% \usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Programming 2]{Programming 2 Revision} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date7
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+%-----------------------------------------------------------------------
+\section{Lists}
+\subsection{ArrayList}
+\begin{frame}
+\frametitle{ArrayList}
+\end{frame}
+
+%--------------------------------------------------------------------
+\defverbatim[colored]\sets{
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
+ArrayList<String> myList = new ArrayList<>();
+myList.add("Bob");
+myList.add("Bob"); // Won't add to the set
+myList.add("Alice");
+myList.add("Fred");
+// Can use a List as a constructor argument
+Set<String> mySet = new HashSet<>(myList); // Size is 3
+
+if(mySet.add("Alice"))// Returns false as Alice already in set
+	// Do things
+
+\end{lstlisting}
+}
+\section{Sets}
+\subsection{Using sets}
+\begin{frame}
+\frametitle{Using sets}
+\begin{itemize}
+\item Contains no duplicate elements in the collection.
+\item Order of items also doesn't matter.
+\sets
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------------
+\subsection{Set Implementations}
+\begin{frame}
+\frametitle{Set Implementations}
+\begin{itemize}
+\item \texttt{\color{red}TreeSet}
+\begin{itemize}
+\item Stores the elements in a red-black tree, orders the elements based on their values.
+\end{itemize}
+\item \texttt{\color{green}HashSet}
+\begin{itemize}
+\item Stores elements in a \texttt{HashTable}
+\end{itemize}
+\item \texttt{\color{orange}LinkedHashSet}
+\begin{itemize}
+\item Implemented as a \texttt{HashTable} with a linked list running through it, orders elements in insertion order.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------------
+\subsection{TreeSet}
+\begin{frame}
+\frametitle{TreeSet}
+\begin{itemize}
+\item Stores elements in a \texttt{Tree} structure in order to maintain the elements in order.
+\item \texttt{TreeSet} can be used with \texttt{Comparable} classes or by providing a \texttt{Comparator}.
+\item These are useful when you need to extract elements from a set in a sorted manner.
+\item \texttt{first()} - returns the smallest element.
+\item \texttt{pollFirst()} which removes and returns the smallest element.
+\item Search, insert and delete takes $O(logn)$ time.
+\item Iterating in sorted order is $O(n)$ time iterating inorder traversal.
+\end{itemize}
+\end{frame}
+%--------------------------------------------------------------------------
+\subsection{HashSet}
+\begin{frame}
+\frametitle{HashSet}
+\begin{itemize}
+\item Stores the elements in a Hash Table.
+\item Allows user to set initial {\color{red} capacity} and {\color{green} load factor}.
+\item \texttt{HashSet} just contains a \texttt{HashMap} with keys defined by the \texttt{hashCode()}.
+\item \texttt{HashSet} is generally the \texttt{Set} you would use unless you need to access the data in sorted order.
+\item Insert, delete and contains are all $O(1)$ time.
+\end{itemize}
+\end{frame}
+%---------------------------------------------------------------
+\begin{frame}
+\frametitle{HashSet - Behind the scenes}
+\begin{enumerate}
+\item Call the \texttt{hashCode()} function.
+\item Apply the \texttt{hash()} function to find the index.
+\item If the position index is empty, add to the head of the list, otherwise find the end of the list and add there.
+\end{enumerate}
+\begin{itemize}
+\item After the \texttt{hash} is complete it is then bitwise \& with $arrLength - 1$ where $arrLength$ is a power of two. 
+\item $71638\%8$ is equivalent to $71638\&7$ and compensates for negative hash codes.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\subsubsection{HashSet notes}
+\begin{frame}
+\frametitle{HashSet notes}
+\begin{itemize}
+\item Two parameters that affect its performance:
+\begin{itemize}
+\item {\color{red} initial capacity} (Default 16, increases to nearest power of 2).
+\item {\color{green} load factor} (Default to 0.75). This determines when to resize the array, e.g. with capacity 16, when the 12th element is added, the array is resized, when this happens:
+\begin{itemize}
+\item All indeces are recalculated
+\item Chains are removed/reduced.
+\item This is expensive.
+\end{itemize}
+\end{itemize}
+\item The performance of the \texttt{hash} function has a large effect on the overall performance.
+\item As chains get long, performance decreases to $O(m)$ 
+\item Extra efficiency is obtained at the cost of memory.
+\item Useful if you want to query a lot, using \texttt{contains}. 
+\end{itemize}
+\end{frame}
+%---------------------------------------------------------------------
+\subsection{LinkedHashSet}
+\begin{frame}
+\frametitle{LinkedHashSet}
+\begin{itemize}
+\item Is the same as HashSet, however includes a {\color{red} doubly linked list}. This means it can be traversed in insertion order too.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------------
+\section{Map}
+\begin{frame}
+\frametitle{Map}
+\begin{itemize}
+\item Allows you to associate a key with one or more values and then quickly retrieve those values using the key.
+\item A map cannot contain duplicate keys: Each key can map to at most one value. \textbf{It can contain duplicate values}.
+\item A set is simply a map with the key equal to the value.
+\end{itemize}
+\textbf{
+Set : \{Fred, Alice, Bob\}\\
+Map:  \{(1,Fred), (2,Alice), (3,Bob)\}\\
+Set as a Map: \{(Fred, Fred), (Alice, Alice), (Bob, Bob)\}\\}
+\begin{itemize}
+\item Maps are a collection of \texttt{Entry} objects, these store both the key and the value for a given map entry.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------
+\defverbatim[colored]\hash{
+\begin{lstlisting}[style = customjava,basicstyle=\scriptsize]
+// String key and Student value
+HashMap<String, Student> hm = new HashMap<>();
+hm.put("BobKey", new Student(33, "Bob"));
+\end{lstlisting}
+}
+\subsubsection{HashMap}
+\begin{frame}
+\frametitle{HashMap}
+\hash
+\begin{enumerate}
+\item A new \texttt{Entry} object is created containing the key and the value.
+\item The \texttt{hashCode} function is called on the key to find the location in the hash table.
+\end{enumerate}
+\texttt{HashSet} is just a \texttt{HashMap} where the value is used as the key.
+\end{frame}
+%------------------------------------------------------------
+\subsubsection{TreeMap}
+\begin{frame}
+\frametitle{TreeMap}
+\begin{itemize}
+\item Behaves just as the \texttt{TreeSet} class, except the key is used to determine the location of the value.
+\end{itemize}
+\begin{enumerate}
+\item The key must be comparable.
+\item the \texttt{compareTo} method is used to insert the entry to the correct position.
+\item \texttt{TreeSet} simply contains a \texttt{TreeMap} with the values set to the key. 
+\end{enumerate}
+\end{frame}
+%----------------------------------------------------------------------------------
+\begin{frame}
+\Huge{\centerline{The End}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

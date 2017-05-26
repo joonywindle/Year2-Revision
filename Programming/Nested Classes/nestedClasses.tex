@@ -80,6 +80,18 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{listings}
 
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -127,7 +139,7 @@ University of East Anglia \\ % Your institution for the title page
 \end{frame}
 %----------------------------------------------------------
 \defverbatim[colored]\staticNest{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class Outer {
 	NestedClass field; // Can have nested class as a field
 	public void aMethod() {
@@ -167,7 +179,7 @@ Outer.NestedClass in = new Outer.NestedClass();
 \end{frame}
 %--------------------------------------------------------
 \defverbatim[colored]\staticExample{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class ColourPalate{
 	private Colour[] myPalate;
 	int size=0;
@@ -197,7 +209,7 @@ public class ColourPalate{
 \end{frame}
 %--------------------------------------------------------
 \defverbatim[colored]\innerClass{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class Outer {
 	NestedClass field; // Can have inner class as a field
 	int a,b;
@@ -232,7 +244,7 @@ Outer.InnerClass in = out.new InnerClass();
 \end{frame}
 %-----------------------------------------------------------------
 \defverbatim[colored]\interface{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 Outer out = new Outer();
 SomeInterface in = out.factoryMethod();
 \end{lstlisting}
@@ -248,7 +260,7 @@ SomeInterface in = out.factoryMethod();
 \end{frame}
 %----------------------------------------------------------------
 \defverbatim[colored]\innerEx{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class TeachingUnit {
 	Student[] s;
 	StudentStats stats=new StudentStats();
@@ -275,7 +287,7 @@ public class TeachingUnit {
 \end{frame}
 %------------------------------------------------------------------------
 \defverbatim[colored]\local{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public void someMethod() {
 	class LocalInner{
 		...	
@@ -297,7 +309,7 @@ public void someMethod() {
 \end{frame}
 %----------------------------------------------------------------------------------
 \defverbatim[colored]\anon{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public void someMethod() {
 	SomeInterface s = new SomeInterface(){
 		public int interfaceMethod(){return 0;}
@@ -306,9 +318,10 @@ public void someMethod() {
 \end{lstlisting}
 }
 \defverbatim[colored]\anonTwo{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
-JButton button= new JButton(“My Button"); button.addActionListener(new ActionListener(){ 
-	public void actionPerformed(ActionEvent e){ 
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
+JButton button= new JButton("My Button"); 
+	button.addActionListener(new ActionListener(){ 
+		public void actionPerformed(ActionEvent e){ 
 	//do stuff do here
 	}
 };
@@ -337,7 +350,7 @@ new Thread(
 %-----------------------------------------------------------------
 
 \defverbatim[colored]\inheritance{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 public class BaseClass {
    int anInt;
    InnerBase ib1 = new InnerBase();
@@ -357,7 +370,7 @@ public class SubClass extends BaseClass{
 }
 
 \defverbatim[colored]\inher{
-\begin{lstlisting}[language=Java,basicstyle=\tiny,keywordstyle=\color{blue}]
+\begin{lstlisting}[style = customjava,basicstyle=\tiny]
 SubClass sub=new SubClass();
 sub.anInt;
 sub.ib1.x;

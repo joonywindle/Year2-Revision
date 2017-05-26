@@ -1,0 +1,13 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Lists}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{ArrayList}{3}{0}{1}
+\beamer@sectionintoc {2}{Sets}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Using sets}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Set Implementations}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{TreeSet}{6}{0}{2}
+\beamer@subsectionintoc {2}{4}{HashSet}{7}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{1}{HashSet notes}{9}{0}{2}
+\beamer@subsectionintoc {2}{5}{LinkedHashSet}{10}{0}{2}
+\beamer@sectionintoc {3}{Map}{11}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{1}{HashMap}{12}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{2}{TreeMap}{13}{0}{3}
