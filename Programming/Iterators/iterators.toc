@@ -1,2 +1,6 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Using iterators}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Creating instance}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Iterating}{5}{0}{2}
+\beamer@sectionintoc {3}{Creating own Iterators}{7}{0}{3}

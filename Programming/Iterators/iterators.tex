@@ -82,6 +82,19 @@
 \usepackage{amsmath}
 \usepackage{algpseudocode,algorithm,algorithmicx}
 
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -115,6 +128,111 @@ University of East Anglia \\ % Your institution for the title page
 \frametitle{Intro}
 \begin{itemize}
 \item Iterate over a collection of objects.
+\item Uses the \texttt{Iterator} interface.
+
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\defverbatim[colored]\create{
+\begin{lstlisting}[style = customjava]
+Iterator it = list.iterator(); // Raw type iterator
+Iterator<Integer> it2 = list.iterator();
+Iterator<Double> it3 = arr.iterator();
+Iterator<Card> it4 = deck.iterator();
+// Can hold arr or list iterator
+Iterator<? extends Number> it5 = arr.iterator(); 
+\end{lstlisting}
+}
+\section{Using iterators}
+\subsection{Creating instance}
+\begin{frame}
+\frametitle{Using iterators - creating instance}
+\begin{itemize}
+\item Create an instance like this:
+\create
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\iter{
+\begin{lstlisting}[style = customjava]
+Iterator it = list.iterator(); // Raw type iterator
+Iterator<Integer> castEx = list.iterator();
+Integer anInt;
+// Returns true if any elements are left to iterate over
+while (it.hasNext()) {
+// Gets the next element and moves the iterator forward.
+	anInt = (Integer) it.next(); // Remove cast by using generics
+	System.out.println("Element = " + anInt);
+	it.remove();  // Removes last element returned by iterator.
+}
+\end{lstlisting}
+}
+\subsection{Iterating}
+\begin{frame}
+\frametitle{Iterating}
+\iter
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\foreach{
+\begin{lstlisting}[style = customjava, basicstyle=\tiny]
+Iterator<Integer> it = list.iterator();
+while (it.hasNext()) {
+	System.out.println(it.next());
+}
+// Is equal to:
+for(Integer i : list) // list must be iterable to use in foreach
+	System.out.println(i);
+\end{lstlisting}
+}
+\begin{frame}
+\frametitle{Iterator Errata}
+\begin{itemize}
+\item \texttt{List} has a special Iterator. The interface \texttt{ListIterator} extends the\texttt{Iterator} interface to include extra methods to move backwards in the list:
+\begin{itemize}
+\item \texttt{previous()}
+\item \texttt{hasPrevious()}
+\item \texttt{add(E o)}
+\item \texttt{nextIndex()}
+\item \texttt{previousIndex()}
+\item \texttt{set(E o)}
+\end{itemize}
+\item For-each control structure uses \texttt{Iterator} to do so.
+\foreach
+\item Cannot us for-each to structually modify the collection.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\cust{
+\begin{lstlisting}[style = customjava, basicstyle=\tiny]
+public class SortedList<T> implements Iterable<T>
+
+	private class SortedIterator implements Iterator<T> {
+		int pos = 0;
+		@override
+		public boolean hasNext() {
+			return pos < size; // Size of array
+		}
+		@override
+		public T next() {
+			return data[pos++];
+		}
+		@override
+		public void remove() {
+			// Optional
+		}
+
+	}
+}
+\end{lstlisting}
+}
+\section{Creating own Iterators}
+\begin{frame}
+\frametitle{Creating own Iterators}
+\begin{itemize}
+\item They are defined as {\color{red} private inner classes}
+\item Class should implement the \texttt{Iterable} interface, which requires a \texttt{iterator()} method.
+\item When implemented the class can be used in a foreach loop.
+\cust
 \end{itemize}
 \end{frame}
 %-----------------------------------------------------------------
