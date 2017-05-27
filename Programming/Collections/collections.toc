@@ -11,3 +11,6 @@
 \beamer@sectionintoc {3}{Map}{11}{0}{3}
 \beamer@subsubsectionintoc {3}{0}{1}{HashMap}{12}{0}{3}
 \beamer@subsubsectionintoc {3}{0}{2}{TreeMap}{13}{0}{3}
+\beamer@sectionintoc {4}{Queues and Deques}{14}{0}{4}
+\beamer@subsectionintoc {4}{1}{Priority Queues}{14}{0}{4}
+\beamer@sectionintoc {5}{Collections class}{15}{0}{5}

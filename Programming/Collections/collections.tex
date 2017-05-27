@@ -285,6 +285,40 @@ hm.put("BobKey", new Student(33, "Bob"));
 \item \texttt{TreeSet} simply contains a \texttt{TreeMap} with the values set to the key. 
 \end{enumerate}
 \end{frame}
+%----------------------------------------------------------------
+\section{Queues and Deques}
+\subsection{Priority Queues}
+\begin{frame}
+\frametitle{Queues and Deques}
+\begin{itemize}
+\item Java uses a {\color{green}linked list} for queues and deques.
+\item Priority queues store elements in a {\color{red}heap} data structure (a complete binary tree).
+\item Duplicates are allowed.
+\item $O(logn)$ time for insertion methods (\texttt{offer,poll, remove and add})
+\item $O(n)$ time for \texttt{remove(Object)} and \texttt{contains}
+\item $(1)$ time for retrieval methods, \texttt{peek, element and size}.
+\item Iterator not guaranteed to traverse in any order.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------
+\section{Collections class}
+\begin{frame}
+\begin{itemize}
+\item Useful methods:
+\begin{itemize}
+\item \texttt{frequency(Collection<?>c, Object o)} - Returns occurences of o in c.
+\item \texttt{rotate(Collection<?> list, int distance)} - Shifts all the elements right in a logical circular way.
+\item \texttt{shuffle(List<?>, list)} - Performs n normal swaps.
+\end{itemize}
+\item Sorting:
+\begin{itemize}
+\item \texttt{sort(List<T> list)} - A modified merge sort.
+\item Mergesort that does not perform the merge operation if not required.
+\item It dumps the specified list into an array,sorts the array, and iterates over the list resetting each element from the corresponding position in the array.
+\item This avoids the $n^2log(n)$ performance that would result from attempting to sort a linked list in place.
+\end{itemize}
+\end{itemize}
+\end{frame}
 %----------------------------------------------------------------------------------
 \begin{frame}
 \Huge{\centerline{The End}}
