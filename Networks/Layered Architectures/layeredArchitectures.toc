@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Communication Network topology}{3}{0}{1}
+\beamer@sectionintoc {2}{Protocol Hierarchies}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Design Considerations}{7}{0}{2}
+\beamer@sectionintoc {3}{Reference models}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{ISO OSI Reference Model}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{TCP/IP Reference model}{11}{0}{3}
+\beamer@subsectionintoc {3}{3}{Tanenbaum Hybrid Reference Model}{13}{0}{3}
