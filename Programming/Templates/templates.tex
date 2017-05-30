@@ -1,0 +1,364 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customcpp}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Templates]{Templates} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%-------------------------------------------------------------------
+\section{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item Code synthesized for required classes by expanding template.
+\item Synthesized code is then compiled as well.
+\item Advantages: No impact on runtime performance, easy for the compiler to optimise code.
+\item Disadvantages: Need to know what synthesized code is needed at compile time. Larger executable.
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------------------
+\defverbatim[colored]\temp{
+\begin{lstlisting}[style = customcpp]
+template <typename T>
+void exchange(T& x, T& y){
+	T tmp = x;
+	x = y;
+	y = tmp;
+}
+\end{lstlisting}
+}
+\defverbatim[colored]\syn{
+\begin{lstlisting}[style = customcpp]
+// New identifier synthesized by compiler
+void _exchange_int(int& x, int& y) {
+	int tmp = x;
+	x = y;
+	y = tmp;
+}
+\end{lstlisting}
+}
+\section{Template Functions}
+\begin{frame}
+\frametitle{Template Functions}
+\begin{itemize}
+\item When the function is invoked, the compiler:
+\begin{itemize}
+\item Deduces the values of the templates parameter.
+\item Determines whether it exists already or not.
+\item If not, a new instance is generated by expanding the template.
+\item Compiles the new instance of the template
+\end{itemize}
+\temp
+\item Exchanging two integers would result a synthesized function:
+\syn
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\section{Type Safety}
+\begin{frame}
+\frametitle{Type Safety}
+\begin{itemize}
+\item The compiler performs type checking on synthesized code.
+\item If trying to swap and integer and a double, there will be an error at compile time.
+\item Opportunities for problems to be detected:
+\begin{itemize}
+\item When the template itself is compiled
+\item When the compiled detects a use of the template.
+\item When the instance of the template is compiled.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\defverbatim[colored]\exp{
+\begin{lstlisting}[style = customcpp]
+template <typname R, typename X, typename Y>
+R ratio(X& x, Y& y) {
+	return x/static_cast<R>(y);
+}
+
+int main(int argc, char* argv[]) {
+	int i = 87;
+	short s = 42;
+
+// R set explicitly, X & Y deduced implicitly.
+	cout << ratio<int>(i,s) << endl; // 2
+	
+	cout << ratio<double>(i,s) << endl;// 2.07134
+	
+	return 0;
+}
+\end{lstlisting}
+}
+\section{Explicit Template Arguments}
+\begin{frame}
+\frametitle{Explicit Template Arguments}
+\begin{itemize}
+\item Sometimes types cannot be deduced from the invocation.
+\item E.g Return type of a function:
+\exp
+\vspace{-0.5cm}
+\item Deduced template parameters must be right most in the list.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\defverbatim[colored]\non{
+\begin{lstlisting}[style = customcpp]
+template <int N>
+void repeat(const String& s) {
+	for (int i = 0; i < N; i++) {
+		cout << s << endl;
+	}
+}
+
+int main(int argc, char* argv[]) {
+// Template argument given explicitly
+	repeat<3>("Hello world");
+	
+	int n = 4;
+// Local variable cannot be used as a non-type argument
+	repeat<n>("Won't work");
+	return 0;
+}
+\end{lstlisting}
+}
+\section{Nontype Template Parameters}
+\begin{frame}
+\frametitle{Nontype Template Parameters}
+\begin{itemize}
+\item They do not have to be typenames:
+\non
+\item Template instantiated at compile time, so arguments must be known at compile time.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\arr{
+\begin{lstlisting}[style = customcpp]
+template <typename T, int N>
+int arrayLength(const T(&array)[N]) { // N part of array type
+	return N;
+}
+\end{lstlisting}
+}
+\section{Array length can be deduced}
+\begin{frame}
+\frametitle{Array length can be deduced}
+\arr
+\begin{itemize}
+\item This works because the compiler deduces that the parameter must be type T and size N.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------
+\defverbatim[colored]\class{
+\begin{lstlisting}[style = customcpp]
+template <typename T> class Array {
+private:
+	T* array;
+	int N;
+public:
+// Method for overloaded operator declared
+	T& operator[](int i);
+	Array(const int size){
+		array = new T[size];
+		N = size;
+	}
+};
+// Generic so must be defined as a template.
+template <typename T>
+T& Array<T>::operator[](int i) {
+	return array[i];
+}
+\end{lstlisting}
+}
+\section{Class Templates}
+\begin{frame}
+\frametitle{Class Templates}
+\begin{itemize}
+\item Used in a very similar way to methods.
+\item Example definition:
+\class
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------
+\defverbatim[colored]\for{
+\begin{lstlisting}[style = customcpp]
+template <typename T> class Array {
+private:
+	T* array;
+	int N;
+public:
+	T* begin() { return array; }
+	
+	T* end() { return array+N; }
+	
+	int length() const { return N; }
+	
+	T& operator[](int i) { return array[i]; }
+	
+	Array(const int size) {
+		array = new T[size];
+		N = size;
+	}
+}
+\end{lstlisting}
+}
+\section{Ranged for loop}
+\begin{frame}[allowframebreaks]
+\frametitle{Ranged for loop}
+\begin{itemize}
+\item To work a collection must have:
+\begin{itemize}
+\item A \texttt{begin()} method that returns the iterator to the first element.
+\item An \texttt{end()} method that returns an iterator for the element just past the end of the collection.
+\end{itemize}
+\item Iterator is an object that:
+\begin{itemize}
+\item Overloads the * operator to return a reference to an element.
+\item Overloads the ++ operator to move the iterator onto the next element.
+\item Overloads the relational operators, e.g. ==, !=, <, > etc...
+\end{itemize}
+\item Pointers behave like iterators.
+\begin{itemize}
+\item We can use a pointer for an iterator
+\item Example isn't very safe...
+\end{itemize}
+\end{itemize}
+\for
+\end{frame}
+%------------------------------------------------------------------
+
+\begin{frame} 
+\Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}

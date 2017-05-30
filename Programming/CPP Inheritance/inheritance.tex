@@ -277,9 +277,29 @@ int main(int argc, char* argv[]) {
 \end{frame}
 
 %------------------------------------------------------------------
+\defverbatim[colored]\mult{
+\begin{lstlisting}[style = customcpp]
+// Only use if "is a" relationship applies to all super-classes
+class Bat : public Mammal, public FlyingAnimal {
+public:
+	Bat(string diet, int wings = 2) : Mammal(diet), FlyingAnimal(wings){}
+};
+
+int main(int argc, char* argv[]) {
+	Bat vampireBat("blood");
+// Inherited from FlyingAnimal class
+	cout << vampireBat.getNumberOfWings() << endl;
+// Inherited from Mammal class
+	cout << vampireBat.likesToEat() << endl;
+	
+	return 0;
+}
+\end{lstlisting}
+}
 \section{Multiple Inheritance}
 \begin{frame}
 \frametitle{Multiple Inheritance}
+
 \end{frame}
 %------------------------------------------------------------------
 
