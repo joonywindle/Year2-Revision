@@ -1,0 +1,436 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customcpp}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Operator Overloading]{Operator Overloading} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%-------------------------------------------------------------------
+\section{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item Redefine function of operators for specific types.
+\item No more complicated than writing function version.
+\item Create methods with specific names.
+\item Compiler uses operand types to determine correct method/function.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------
+\defverbatim[colored]\fra{
+\begin{lstlisting}[style = customcpp]
+class Fraction
+{
+private:
+	int numerator, denominator;
+public:
+// Begin with operator, redefine behaviour of *
+// Redefine behaviour for two Fraction operands
+	Fraction operator*(Fraction& rf) {
+		Fraction result(0,1);
+		
+		result.numerator = numerator*rf.numerator;
+		result.denominator = denominator*rf.denominator;
+		
+		return result;	
+	}
+}
+\end{lstlisting}
+}
+\section{Operator overloading}
+\subsection{Method Example}
+\begin{frame}
+\frametitle{Method Example}
+\fra
+\vspace{-0.5cm}
+\begin{itemize}
+\item This is a {\color{red}method} version of overloading.
+\item Is a {\color{red} method} because it belongs to a class and takes one argument as the right side operand.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------
+\defverbatim[colored]\fraf{
+\begin{lstlisting}[style = customcpp,basicstyle=\tiny]
+class Fraction
+{
+private:
+	int numerator, denominator;
+public:
+// Accessors don't break encapsulation
+// inline to avoid method call overhead
+	inline int getNumerator() const {
+		return numerator;
+	}
+	inline int getDenominator() const {
+		return denominator
+	}
+};
+
+// Minimise amount of code that directly depends on internal implementation.
+
+inline Fraction operator*(const Fraction& lf,const Fraction& rf) {
+	
+	int numerator, denominator;
+	
+	numerator = lf.numerator*rf.numerator;
+	denominator = lf.denominator*rf.denominator;
+	
+	return Fraction(numerator,denominator);	
+}
+\end{lstlisting}
+}
+\subsection{Function Example}
+\begin{frame}
+\frametitle{Function Example}
+\fraf
+\vspace{-0.75cm}
+\begin{itemize}
+\item Passing by reference is more efficient, but provide guarantee object can not be modified by method by using \texttt{const}. Limits lines of code that can modify a variable, makes debugging/maintenance easier.
+
+\end{itemize}
+
+\end{frame}
+%-----------------------------------------------------------------------
+\subsubsection{More on operators}
+\begin{frame}
+\frametitle{More on operators}
+\begin{itemize}
+\item Can overload operators for different types, e.g.\\ \texttt{Fraction {\color{blue}operator}*({\color{blue}int} lh, {\color{blue}const} Fraction\& rh)}.
+\item Allows integer multiplication with a Fraction. This only allows \texttt{i*frac} and not \texttt{frac*i}.
+\item If implemented one way, best to have both to support \texttt{frac*i} too.
+\item Another way is to use conversions...
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------
+\defverbatim[colored]\con{
+\begin{lstlisting}[style = customcpp]
+Fraction(int n) {
+	numerator = n;
+	denominator = 1;
+}
+\end{lstlisting}
+}
+\subsection{Conversions}
+\begin{frame}
+\frametitle{Conversions}
+\begin{itemize}
+\item Constructors define conversions:
+\item Add constructor that takes a single int:
+\con
+\item Use the single operator definition of \\
+\texttt{Fraction {\color{blue}operator}*({\color{blue}const} Fraction\& lh, {\color{blue}const} Fraction\& rh)}.
+\item If this is in place, the compiler {\color{green} implicitly} casts the integer to a \texttt{Fraction} when either \texttt{i*frac} or \texttt{frac*i} is called.
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------
+\defverbatim[colored]\dob{
+\begin{lstlisting}[style = customcpp]
+operator double() const {
+	return numerator/static_cast<double>(denominator);
+}
+\end{lstlisting}
+}
+\defverbatim[colored]\div{
+\begin{lstlisting}[style = customcpp]
+// frac implicitly converted to double.
+double d = frac/3.0;
+\end{lstlisting}
+}
+\section{Conversions - Extended}
+\begin{frame}
+\frametitle{Conversions - Extended}
+\begin{itemize}
+\item Can convert to other types using:
+\dob
+\vspace{-0.25cm}
+\item Can then easily convert to \texttt{double} and do things like:
+\div
+\vspace{-0.25cm}
+\item ISSUE! Now two ways of implementing \texttt{i*frac}:
+\begin{itemize}
+\item Convert \texttt{i} into a fraction and use overload as before...
+\item Convert \texttt{frac} into a double and use build in *.
+\item Ambiguity like this can stop it compiling.
+\end{itemize}
+\item Can stop this issue by using the \texttt{\color{blue} explicit} keyword in front of the constructor. This stops implicit conversions from taking place.
+\item Can still be used as an explicit conversion using \texttt{{\color{blue}static\_cast}<Fraction>(4);}
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\rele{
+\begin{lstlisting}[style = customcpp, basicstyle = \scriptsize]
+inline bool operator == (const Fraction& f, const Fraction& g) {
+	return f.getNumerator()*g.getDenominator() == g.getNumerator()*g.getDenominator();
+}
+\end{lstlisting}
+}
+\defverbatim[colored]\reln{
+\begin{lstlisting}[style = customcpp, basicstyle = \scriptsize]
+inline bool operator != (const Fraction& f, const Fraction& g) {
+	return !(f==g);
+}
+\end{lstlisting}
+}
+\section{Relational Operators}
+\begin{frame}
+\frametitle{Relational Operators}
+\begin{itemize}
+\item Often good to implement relational operators e.g:
+\rele
+\item With one defined, often easier to define other operators with regards to the original.
+\reln
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\ostr{
+\begin{lstlisting}[style = customcpp, basicstyle = \scriptsize]
+inline ostream& operator << (ostream& str, const Fraction& f) {
+	return str << f.getNumerator() << "/" << f.getDenominator();
+}
+\end{lstlisting}
+}
+\section{Overloading Streams}
+\subsection{Ostream}
+\begin{frame}
+\frametitle{Overloading OStreams}
+\ostr
+\begin{itemize}
+\item Returns a reference to an \texttt{ostream}
+\item Takes in an \texttt{ostream} but not as const as it changes.
+\item All output streams are subclasses of \texttt{ostream}.
+\item Allows output to any output stream.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------
+\defverbatim[colored]\istr{
+\begin{lstlisting}[style = customcpp, basicstyle = \scriptsize]
+inline istream& operator >> (istream& str, Fraction& f) {
+	char c;
+	int numerator,denominator;
+	if(str >> numerator >> c >> denominator) {
+		if(c == '/')
+			f = Fraction(numerator,denominator);
+		else
+			str.clear(ios_base::failbit);
+	}
+	return str; 
+}
+\end{lstlisting}
+}
+\subsection{IStream}
+\begin{frame}
+\frametitle{Overloading IStreams}
+\istr 
+\begin{itemize}
+\item Overload \texttt{istreams} for stream based input.
+\item Takes in a reference to the object to alter, in this case \texttt{Fraction f}. 
+\item Using \texttt{ios\_base::failbit} makes the stream handle errors gracefully.
+\end{itemize}
+\end{frame}
+
+\subsubsection{Stream Status Flags}
+\begin{frame}
+\frametitle{Strewm Status Flags}
+\begin{itemize}
+\item Streams have condition states to which evaluate to true if successful.
+\item Define symbolic constants for each bit:
+\begin{itemize}
+\item \textit{stream}::badbit - unrecoverable error.
+\item \textit{stream}::failbit - recoverable error.
+\item \textit{stream}::eofbit - stream has reach the end of file.
+\item \textit{stream}::goodbit - stream operated correctly.
+\end{itemize}
+\item Can enquire about states e.g. \texttt{s.bad()} - returns true if fail or bad bits set.
+\item can modify using \texttt{s.clear(flags)} to reset all states apart from those specified.
+\item Can set specific status bits using \texttt{s.setstate(flags)}.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\defverbatim[colored]\fout{
+\begin{lstlisting}[style = customcpp, basicstyle = \scriptsize]
+ofstream os("file.txt", ofstream::out);
+if (os) {
+	for(int i = 1; i <= 12; i++){
+		for(int j = 1; j <= 12; j++) {
+			os << setw(2) << i*j << " ";
+		}
+		os << endl;
+	}
+	os.close();
+}
+else {
+	cerr << "Error" << endl;
+}
+\end{lstlisting}
+}
+\section{Files}
+\subsection{Output}
+\begin{frame}
+\frametitle{Output file}
+\fout
+\end{frame}
+
+%-------------------------------------------------------------------
+\defverbatim[colored]\fin{
+\begin{lstlisting}[style = customcpp, basicstyle = \scriptsize]
+ifstream is("file.txt", ifstream::in);
+if (is) {
+	for(int i = 1; i <= 12; i++){
+		for(int j = 1; j <= 12; j++) {
+			int n;
+			is >> n;
+			cout << setw(3) << n << " ";
+		}
+		cout << endl;
+	}
+	is.close();
+}
+else {
+	cerr << "Error" << endl;
+}
+\end{lstlisting}
+}
+\subsection{Input}
+\begin{frame}
+\frametitle{Input file}
+\fin
+\end{frame}
+%------------------------------------------------------------------
+
+
+\begin{frame} 
+\Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}

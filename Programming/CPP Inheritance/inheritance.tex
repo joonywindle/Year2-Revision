@@ -1,0 +1,290 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+
+\lstdefinestyle{customjava}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customcpp}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Inheritance]{Inheritance} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%-------------------------------------------------------------------
+\section{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item Advantages:
+\begin{itemize}
+\item Encourages code use
+\item Encourages modularity, data hiding and encapsulation
+\item Makes programs maintainable and easily extendable
+\end{itemize}
+\item Disadvantages:
+\begin{itemize}
+\item Can lead to overly complicated implementations.
+\item Introduces computational overheads.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\abs{
+\begin{lstlisting}[style = customcpp]
+class Speaker
+{
+private:
+// Inherited, but not visible in sub-class
+	string utterance;
+public:
+// Can be overridden, inherited and visible in sub-class	
+	virtual string getUtterance() {
+		return utterance;	
+	}
+// Pure virtual, must be overridden before instantiation
+	virtual void speak() = 0;
+
+	Speaker(string utterance) {
+		this->utterance = utterance;
+	}
+};
+\end{lstlisting}
+}
+\section{Inheritance}
+\subsection{Base class}
+\begin{frame}
+\frametitle{Inheritance}
+\begin{itemize}
+\item Abstract Base class:
+\abs
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------
+\defverbatim[colored]\sub{
+\begin{lstlisting}[style = customcpp, basicstyle = \tiny]
+class Philosopher : public Speaker
+{
+public:
+// Override pure virtual method, can now instantiate
+	void speak() {
+		cout << "My philosophy is..." << getUtterance() << endl;
+	}
+	
+// Add new methods to inherited behaviour 
+	inline void philosophosise() {
+		cout << "But what do I mean..." << getUtterance() << endl;
+	}
+// Over-ride inherited virtual method, these cannot be inline
+	string getUtterance() {
+		return "Woof-woof";
+	}
+
+// Call super-class constructor
+	Philosopher(string philosophy) : Speaker(philosophy)
+	{
+	}
+};
+\end{lstlisting}
+}
+\subsection{Sub Class}
+\begin{frame}
+\frametitle{Sub Class}
+\begin{itemize}
+\item Concrete Sub Class:
+\end{itemize}
+\sub
+\end{frame}
+
+%------------------------------------------------------------------
+\defverbatim[colored]\poly{
+\begin{lstlisting}[style = customcpp]
+int main(int argc, char* argv[]) {
+	Philosopher descartes("I think, therefore I am");
+	Dog rover;
+	Speaker* speaker = &descartes;
+	
+// Uses speak in Philosopher class
+	speaker->speak();
+	speaker = &rover;
+	
+// Uses speak in Dog class
+	speaker->speak();
+	Speaker &orater = descartes;
+	
+// Pointers and references can be polymorphic
+	orater.speak();
+	return 0;
+}
+\end{lstlisting}
+}
+\section{Polymorphic pointers and references}
+\begin{frame}
+\frametitle{Polymorphic pointers and references}
+\begin{itemize}
+\item Superclass pointers can point to sub-class objects.
+\item Superclass references can reference sub-class objects.
+\item Can only access methods present in the super-class.
+\poly
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\section{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item Differences between Java and C++:
+\begin{itemize}
+\item Java methods can be over-riden unless declared \texttt{final}.
+\item C++ methods cannot be over-riden unless declared \texttt{virtual}.
+\item In C++ inheritance can be \texttt{public} or \texttt{private}.
+\begin{itemize}
+\item \texttt{public}: users of sub-class can use public members inherited from base class.
+\item \texttt{private}: users of sub-class cannot access public members inherited from base class.
+\end{itemize}
+\item Java inheritance is always \texttt{public}
+\item Java has implicit base class \texttt{Object}, C++ doesn't.
+\end{itemize}
+\item Both C++ and Java provide dynamic binding.
+\begin{itemize}
+\item Method invoked depends on the type of object, not the type of reference/pointer.
+\item The methods available, depend on the type of reference/pointer.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------
+\section{Multiple Inheritance}
+\begin{frame}
+\frametitle{Multiple Inheritance}
+\end{frame}
+%------------------------------------------------------------------
+
+\begin{frame} 
+\Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}

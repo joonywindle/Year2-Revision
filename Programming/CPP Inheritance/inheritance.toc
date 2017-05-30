@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Inheritance}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Base class}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Sub Class}{5}{0}{2}
+\beamer@sectionintoc {3}{Polymorphic pointers and references}{6}{0}{3}

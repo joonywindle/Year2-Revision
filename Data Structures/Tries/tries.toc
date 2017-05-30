@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Example}{4}{0}{1}
+\beamer@sectionintoc {2}{Linked list implementation}{5}{0}{2}
