@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Functors}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Example}{4}{0}{1}
+\beamer@sectionintoc {2}{Lambdas}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Example}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Capture by value}{7}{0}{2}
+\beamer@subsectionintoc {2}{3}{Capture by reference}{8}{0}{2}
+\beamer@subsectionintoc {2}{4}{Storing lambdas}{9}{0}{2}

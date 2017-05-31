@@ -134,10 +134,181 @@ University of East Anglia \\ % Your institution for the title page
 \end{frame}
 
 %-------------------------------------------------------------------
-\section{Function Pointers}
+\defverbatim[colored]\fun{
+\begin{lstlisting}[style = customcpp]
+template<typename T, int N, typename F>
+void display(T (&array)[N], F& hasProperty) {
+	for (int i = 0; i < N; i++) {
+		if (hasProperty(array[i]))
+			cout << array[i] << " ";
+	}
+}
+\end{lstlisting}
+}
+\section{Functors}
 \begin{frame}
+\frametitle{Functors}
 \begin{itemize}
+\item Is an object that acts like a function.
+\item Provides plug-in that adapts the behaviour of other methods/objects.
+\item E.g Print all elements in an array that have some property:
+\begin{itemize}
+\item Problem: Don't know what kind of properties.
+\item Solution: Supply an object as a parameter that has:
+\begin{itemize}
+\item A method to determine whether an element has a property.
+\item Instance variables that describe the particular property.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\fun
+\end{frame}
+%-------------------------------------------------------------------
+\defverbatim[colored]\ismul{
+\begin{lstlisting}[style = customcpp]
+template <typename T>
+class IsMultipleOf {
+private:
+	T n;
+public:
+	IsMultipleOf(T n){ this->n = n; }
+// Use object like a function
+	bool operator()(T& v){
+		return v%n == 0;
+	}
+}
+int main(int argc, char* argv) {
+	int array[] = {+2,-6,+3,-5,+7,-9,+3,-2,+4,-5,+8,-8,+9};
+	IsMultipleOf<int> isMultiple(3);
+// Prints all multiples of 3
+	display(array, isMultiple);
+	return 0;
+}
+\end{lstlisting}
+}
+\subsection{Example}
+\begin{frame}
+\frametitle{Example}
+Determine if a number is a fixed multiple of some integer:
+\ismul
+\end{frame}
 
+%-----------------------------------------------------------------
+\defverbatim[colored]\lam{
+\begin{lstlisting}[style = customcpp]
+[N](int n) const char* {return (n%N==0)?"even":"odd"}
+\end{lstlisting}
+}
+\section{Lambdas}
+\begin{frame}
+\frametitle{Lambdas}
+\begin{itemize}
+\item Basically an anonymous function
+\item Alternative to functors.
+\lam
+\item Have four parts:
+\begin{itemize}
+\item Capture list: \texttt{[N]}
+\item Parameter list: \texttt{(int n)}
+\item Optional return type, compiler will deduce one if not specified: \texttt{const char*}
+\item The body: \texttt{\{return (n\%N==0)?"even":"odd"\}}
+\end{itemize}
+\item Can capture local and global variables of the scope in which they are declared.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\defverbatim[colored]\lamex{
+\begin{lstlisting}[style = customcpp]
+
+int main(int argc, char* argv) {
+	int array[] = {+2,-6,+3,-5,+7,-9,+3,-2,+4,-5,+8,-8,+9};
+
+// Prints all even numbers
+	display(array, [](int n){return !(n%2);});
+	return 0;
+}
+\end{lstlisting}
+}
+\subsection{Example}
+\begin{frame}
+\frametitle{Example}
+\begin{itemize}
+\item Passed to templates the same way as Functors:
+\lamex
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\val{
+\begin{lstlisting}[style = customcpp]
+
+int main(int argc, char* argv) {
+	int array[] = {+2,-6,+3,-5,+7,-9,+3,-2,+4,-5,+8,-8,+9};
+	int N = 3;
+	
+// Prints all multiples of 3, captured by value
+	display(array, [N](int n){return !(n%N);});
+	return 0;
+}
+\end{lstlisting}
+}
+\subsection{Capture by value}
+\begin{frame}
+\frametitle{Capture by value}
+\begin{itemize}
+\item Simplest/Safest way is to capture by value, therefore a copy is passed to the lambda.
+\val
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\ree{
+\begin{lstlisting}[style = customcpp]
+
+int main(int argc, char* argv) {
+	int array[] = {+2,-6,+3,-5,+7,-9,+3,-2,+4,-5,+8,-8,+9};
+	int N = 1;
+	
+// Prints all multiples of N where n doubles each iteration?
+	display(array, [&N](int n){return !(n%N*2);});
+// N is 2,4,8,16.... etc..
+	return 0;
+}
+\end{lstlisting}
+}
+\subsection{Capture by reference}
+\begin{frame}
+\frametitle{Capture by reference}
+\begin{itemize}
+\item Lambda can in turn, alter the value taken in by reference using \&.
+\ree
+\item Default is capture by value, unless specified by \&. Can use:
+\begin{itemize}
+\item {[\&, \textit{list...}]}, to capture all by reference unless otherwise specified.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\aut{
+\begin{lstlisting}[style = customcpp]
+auto multipleOfN = [N](int n){if (n%N == 0) cout << n;};
+\end{lstlisting}
+}
+\defverbatim[colored]\std{
+\begin{lstlisting}[style = customcpp]
+std::function<boolean(int)> multipleOfN = [N](int n) boolean {if (n%N == 0) cout << n;};
+\end{lstlisting}
+}
+\subsection{Storing lambdas}
+\begin{frame}
+\frametitle{Storing lambdas}
+\begin{itemize}
+\item Can use \texttt{\color{blue} auto}, leaves to the compiler to deduce type.
+\aut
+\item Alternatively can use \texttt{std::function<R(AL)>}
+\begin{itemize}
+\item R is the return type.
+\item AL is comma seperated list of arguments
+\std
+\end{itemize}
 \end{itemize}
 \end{frame}
 %------------------------------------------------------------------
