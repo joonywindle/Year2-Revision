@@ -93,6 +93,7 @@
   commentstyle=\itshape\color{gray!40!black},
   identifierstyle=\color{blue},
   stringstyle=\color{orange},
+  tabsize = 2
 }
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -192,15 +193,35 @@ $S = \{
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------
+\defverbatim[colored]\lstI{
+\begin{lstlisting}[style = customjava]
+public class MyThread extends Thread{
+	public void run(){
+    	for(int i = 0; i < 13; i++)
+        	System.out.println
+            ("Thread Iteration " + i);
+    }
+}
+\end{lstlisting}
+}
 \section{Linked list implementation}
 \begin{frame}
+\frametitle{Linked list implementation}
 \begin{itemize}
 \item First represent the trie as a binary tree:
 \begin{itemize}
 \item Left child in the binary tree corresponds to leftmost child in the trie.
 \item Right child in the binary tree corresponds to leftmost sibling in the trie.
 \end{itemize}
-
+\item Keys are represented by character strings:
+\begin{itemize}
+\item The subset of characters that can be used as symbols in a key is assumed to have been specified, as is the character to be used as the end of key symbol.
+\end{itemize}
+\item Complexity:
+\begin{itemize}
+\item Search is $O(nm)$ time where $m$ is the size of the alphabet plus 1 for \$.
+\item If a a branch is ``Straggly" i.e. one branch has a long branch to a single key, they can be compressed and simply go to the one coalesced key.
+\end{itemize}
 \end{itemize}
 \end{frame}
 %-----------------------------------------------------------------
