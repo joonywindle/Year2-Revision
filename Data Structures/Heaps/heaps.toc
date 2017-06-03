@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Array implementation}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Sift up}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Sift Down}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Methods}{7}{0}{2}
+\beamer@subsectionintoc {2}{4}{Heapify}{8}{0}{2}
+\beamer@sectionintoc {3}{Heap Sort}{9}{0}{3}
