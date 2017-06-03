@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Inserting}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Inserting - Case 1}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Inserting - Case 2}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Inserting - Case 3}{6}{0}{2}
+\beamer@subsectionintoc {2}{4}{Inserting - Case 4}{7}{0}{2}
+\beamer@sectionintoc {3}{B-Trees}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{Comparison}{9}{0}{3}
