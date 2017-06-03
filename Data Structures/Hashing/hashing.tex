@@ -154,6 +154,70 @@ $h(k) = h(k').$\\
 \end{itemize}
 \end{itemize}
 \end{frame}
+%----------------------------------------------------------------
+\section{Choosing Hash Function}
+\begin{frame}
+\frametitle{Choosing a Hash Function}
+\begin{itemize}
+\item A good hash function maps keys {\color{red}uniformly} and {\color{green}randomly} into the full range of possible locations.
+\item A good hash function should depend on all of the charactersf the characters in a key, but this is not a sufficient condition for a good hash function.
+\item Must not just depend on all of the characters in a key but must also distribute keys evenly over the table.
+\item The built in Java function \texttt{hashCode} returns an integer based on the objects {\color{blue}reference} unless the object is a string then it is based on the string itself.
+\item The Java class \texttt{HashTable} can be used with keys of any user-defined data type provided an instance method \texttt{hashCode} is defined.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\section{Resolving Collisions}
+\begin{frame}
+\frametitle{Resolving Collisions}
+\begin{itemize}
+\item Use some other location that is open in the table:
+\begin{itemize}
+\item {\color{red} Open addressing}
+\end{itemize}
+\item Change the structure of the hash table so that each location can correspond to more than one value:
+\begin{itemize}
+\item {\color{green}Chaining}.
+\item {\color{purple}Buckets}.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\subsection{Chaining/Buckets}
+\begin{frame}
+\frametitle{Chaining/Buckets}
+\begin{itemize}
+\item Chaining:
+\begin{itemize}
+\item For each location $T$, keep a {\color{red} list} of allthe keys hashed to that location.
+\item Each entry in $T$ is thus a reference to a linked list of keys.
+\item To form a search, just hash to find the list and then perform the appropriate operation.
+\end{itemize}
+\item Buckets:
+\begin{itemize}
+\item Each location in the hash table is a bucket.
+\item A fixed number, $b$ of locations to store the keys.
+\item Total space available is thus:\\
+$size \times b$
+\end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\subsection{Open Addressing}
+\begin{frame}
+\frametitle{Open Addressing}
+\begin{itemize}
+\item If a collision occurs, alternative cells in $T$ are tried until an empty cell is found.
+\item Locating an open loaction in te hash table is called {\color{green}probing} 
+\item May be necessary to try more than one alternqative location.
+\item The locations examined when a new key is inserted is called a {\color{purple}probe sequence}.
+\item Let $\langle S_j^k\rangle$ denote the probe sequence then:\\
+$s_0^k = h(k)$\\
+$s_j^k = (s^k_{j-1} + p(j,k))\%size, \quad j \geq 1$.\\
+\item Where $p(j,k)$ is called a {\color{red}probe increment}.
+\item In the simplist scheme the probe increment is independant of both $j$ and $k$. i.e. it is a constant $p$ in particular {\color{magenta}linear probing}, $p=1$.
+\end{itemize}
+\end{frame}
 %-----------------------------------------------------------------
 
 \begin{frame} 

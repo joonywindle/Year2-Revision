@@ -1,2 +1,6 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Choosing Hash Function}{4}{0}{2}
+\beamer@sectionintoc {3}{Resolving Collisions}{5}{0}{3}
+\beamer@subsectionintoc {3}{1}{Chaining/Buckets}{6}{0}{3}
+\beamer@subsectionintoc {3}{2}{Open Addressing}{7}{0}{3}
