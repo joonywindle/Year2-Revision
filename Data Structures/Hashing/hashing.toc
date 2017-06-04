@@ -4,3 +4,11 @@
 \beamer@sectionintoc {3}{Resolving Collisions}{5}{0}{3}
 \beamer@subsectionintoc {3}{1}{Chaining/Buckets}{6}{0}{3}
 \beamer@subsectionintoc {3}{2}{Open Addressing}{7}{0}{3}
+\beamer@subsectionintoc {3}{3}{Linear Probing}{8}{0}{3}
+\beamer@subsectionintoc {3}{4}{Clustering}{9}{0}{3}
+\beamer@subsectionintoc {3}{5}{Quadratic Probing}{10}{0}{3}
+\beamer@subsubsectionintoc {3}{5}{1}{Must be prime}{12}{0}{3}
+\beamer@subsubsectionintoc {3}{5}{2}{Example}{13}{0}{3}
+\beamer@subsectionintoc {3}{6}{Double Hashing}{14}{0}{3}
+\beamer@subsubsectionintoc {3}{6}{1}{Example}{15}{0}{3}
+\beamer@subsectionintoc {3}{7}{Rehashing}{16}{0}{3}

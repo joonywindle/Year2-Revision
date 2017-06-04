@@ -218,8 +218,202 @@ $s_j^k = (s^k_{j-1} + p(j,k))\%size, \quad j \geq 1$.\\
 \item In the simplist scheme the probe increment is independant of both $j$ and $k$. i.e. it is a constant $p$ in particular {\color{magenta}linear probing}, $p=1$.
 \end{itemize}
 \end{frame}
+%----------------------------------------------------------------
+\subsection{Linear Probing}
+\begin{frame}
+\frametitle{Linear Probing}
+\begin{itemize}
+\item If $T[h(k)]$ is occupied, try successive locations in $T$ with wrap-around.
+\item Retrieval must be able to follow the same path used on insertion.
+\item Care must be taken over deletion:
+\begin{itemize}
+\item When searching for the key, if an empty location is encountered before the key is found, this implies that the key is not present in $T$.
+\item Only flag a location for deletion in a delete operation, otherwise a subsequent search might reach an incorrect conclusion.
+\end{itemize}
+\item When inserting should first check that the given key is not already present in the table:
+\begin{itemize}
+\item If not, {\color{red}probe sequence} ends and is added into the empty location.
+\item May encounter flagged locations before hitting the empty location.
+\item If we record the position of the first flagged location encountered we can store the entry in that location.
+\end{itemize}
+\item Been shown that provided load factor is 0.5 (half full table), only 2.5 probes are required onaverage for insertion and only 1.5 on average for a successful search.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\subsection{Clustering}
+\begin{frame}
+\frametitle{Clustering}
+\begin{itemize}
+\item Resolving collisions with linear probing leads to clusters of occupied locations.
+\item Suppose when inserting we hash to a location $k$ in the table and we then have to go through a probe sequence of length $r$.
+\item The next time we hash to location $k$ we need to go through a probe sequence of length $r+1$ at least.
+\item Each addition to the table, increases the size of some cluster by 1 (at least - may also get merging of clusters).
+\item Known as {\color{green}primary clustering}.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\defverbatim[colored]\qp{
+\begin{lstlisting}[style = custom]
+int i = h(k);
+int j = 0;
+while (T[i].key != emptyKey) {
+	j++;
+	i += 2*j - 1%T.size;
+}
+T[i].key = k;
+T[i].data = d;
+\end{lstlisting}
+}
+\subsection{Quadratic Probing}
+\begin{frame}[allowframebreaks]
+\frametitle{Quadratic Probing}
+\begin{itemize}
+\item Some schenes, the probe increment depends on the value of the index, $j$, in the probe sequence, but is still independant of $k$.
+\item In quadratic probing, the probe sequence is given by:\\
+\begin{center}
+$s_j^k = (h(k)+j^2)\%size$\\
+\end{center}
+i.e.\\
+\begin{center}
+$s_0^k = h(k)$\\
+$s^k_j = (s^k_{j-1} + 2j - 1)\%size, \quad j \geq 1,$\\
+\end{center}
+since\\
+\begin{center}
+$j^2 = (j-1)^2+2j-1$
+\end{center}
+\item The increment function for quadratic probing is $inc(j,k) = 2j-1$
+\end{itemize}
+\qp
+\end{frame}
 %-----------------------------------------------------------------
-
+\subsubsection{Must be prime}
+\begin{frame}
+\frametitle{Must be prime}
+\begin{itemize}
+\item If size is not prime then there are only $p$ locations that can be generated as alternative loctions when a clash occurs.
+\item However, if a size is a prime, and $T$ is at least half empty, a key can always be inserted.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\subsubsection{Example}
+\begin{frame}
+\frametitle{Example}
+\begin{itemize}
+\item $h(k) = k\%13$
+\item Insert 8,42,29,51,47,13,26 into table of size 13:\\
+\end{itemize}
+\begin{columns}[t]
+\column{0.5\textwidth}
+\includegraphics[scale=0.25]{j.png}\\
+\includegraphics[scale=0.25]{k.png}\\
+\includegraphics[scale=0.35]{final.png}
+\column{0.5\textwidth}
+\vspace{-1cm}
+{\tiny
+\begin{itemize}
+\item 8 - straight in position 8.
+\item 42 - stright in position 3.
+\item 29:
+\begin{itemize}
+\tiny
+\item $29\%13 = 3$ - 3 is full,
+\item $(3+1)\%13 = 4$ - inserted into 4.
+\end{itemize}
+\item 51 - straight into 12.
+\item 47:
+\begin{itemize}
+\tiny
+\item $47\%13 = 8$ - 8 is full,
+\item $(8+1)\%13 = 9$ - inserted into 9.
+\end{itemize}
+\item 13 - straight into 0
+\item 34:
+\begin{itemize}
+\tiny
+\item $34\%13 = 8$ - 8 is full,
+\item $(8+1)\%13 = 9$ - 9 is full,
+\item $(9+3)\%13 = 12$ - 12 is full,
+\item $(12+5)\%13 = 4$ - 4 is full,
+\item $(4+7)\%13 = 11$ - inserted into 11
+\end{itemize}
+\end{itemize}
+}
+\end{columns}
+\end{frame}
+%---------------------------------------------------------------
+\defverbatim[colored]\dh{
+\begin{lstlisting}[style = custom]
+int i = h(k);
+while (T[i].key != emptyKey) {
+	i += r-(k%r)%size;
+}
+T[i].key = k;
+T[i].data = d;
+\end{lstlisting}
+}
+\subsection{Double Hashing}
+\begin{frame}
+\frametitle{Double Hashing}
+\begin{itemize}
+\item Use another hash functionas the increment function.
+\item E.g. $h_2(k) = r - (k\%r)$
+\item Same increment is added each stage, but the increment is different for different keys.
+\end{itemize}
+\dh
+\end{frame}
+%----------------------------------------------------------------
+\subsubsection{Example}
+\begin{frame}
+\frametitle{Example}
+\begin{itemize}
+\item $h(k) = k\%13$
+\item $h_2(k) = 5-(k\%5)$
+\item Insert 8,42,29,50,47,13,26
+\end{itemize}
+\begin{columns}[c]
+\column{0.5\textwidth}
+\includegraphics[scale=0.3]{hs.png}\\
+\includegraphics[scale=0.4]{finaldh.png}
+\column{0.5\textwidth}
+\begin{itemize}
+\tiny
+\item 8 - straight into 8
+\item 42 - straight into 3
+\item 29:
+\begin{itemize}
+\tiny
+\item $29\%13 = 3$ - 3 is full,
+\item $(3+1)\%13 = 4$ - inserted into 4
+\end{itemize}
+\item 51 - straight into 12
+\item 47:
+\begin{itemize}
+\tiny
+\item $47\%13 = 8$ - 8 is full,
+\item $(8+3)\%13 = 11$ - inserted into 11
+\end{itemize}
+\item 13 - inserted into 0
+\item 34:
+\begin{itemize}
+\tiny
+\item $34\%13 = 8$ - 8 is full,
+\item $(8+1) = 9$ - insert into 9. 
+\end{itemize}
+\end{itemize}
+\end{columns}
+\end{frame}
+%---------------------------------------------------------------
+\subsection{Rehashing}
+\begin{frame}
+\frametitle{Rehashing}
+\begin{itemize}
+\item If $T$ gets too full, the running time for operations increases and for hashing with quadratic probing, inserts may fail.
+\item A solution is to build another hash table, $T2$, approximately the size of $T$ e.g. double size and then increase to the next prime number.
+\item $T$ is then scanned and each (non-deleted) key from $T$ is inserted into $T2$
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
 \begin{frame} 
 \Huge{\centerline{The End}}
 \end{frame}
