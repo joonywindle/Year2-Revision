@@ -1,0 +1,326 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+
+\lstdefinestyle{custom}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\ttfamily\bfseries\color{green!40!black},
+  commentstyle=\ttfamily\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  tabsize = 2
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Basic Sorting]{Basic Sorting} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame} 
+
+%------------------------------------------------------------------
+\section{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item \textbf{Time Complexity:}
+\begin{itemize}
+\item worst/average/best cases
+\item Order andruntime complexity function
+\item Number of comparisons vs number of swaps
+\end{itemize}
+\item \textbf{Space Complexity:}
+\begin{itemize}
+\item Is it in {\color{red}place}, this requires just a constant amount of memory.
+\end{itemize}
+\item \textbf{Basis:}
+\begin{itemize}
+\item Comparison (selection, insertion, bubble, merge, quick and heap sort).
+\item Grouping (counting, bucket and radix).
+\end{itemize}
+\item \textbf{Stability:}
+\begin{itemize}
+\item Algorithm stable if the ordering of equal items in the original array is maintained in the sorted array.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%---------------------------------------------------------------------
+\defverbatim[colored]\selec{
+\begin{lstlisting}[style = custom]
+for i = 1 to n-1:
+	pos = i
+	for j=i+1 to n:
+		if T[j] < T[pos]
+			pos = j
+		endif
+	endfor
+	temp = T[pos]
+	T[pos] = T[i]
+	T[i] = temp
+endfor
+\end{lstlisting}
+}
+\section{Selection sort}
+\begin{frame}
+\frametitle{Selection sort}
+\begin{enumerate}
+\item Find the minimum value in the list.
+\item Swap it with the value in the first position.
+\item Repret the steps above for the for remainder of the list (starting in the second position).
+\selec
+\end{enumerate}
+\end{frame}
+%----------------------------------------------------------------
+\subsection{Analysis}
+\begin{frame}
+\frametitle{Analysis}
+\begin{itemize}
+\item Fundamental operation: \texttt{T[j] < T[pos]}.
+\item Worst case: All cases the same.
+\item Complexity function:
+\end{itemize}
+\begin{equation}
+\tiny
+\begin{split}
+t(n) & = \displaystyle\sum_{i=1}^{n-1}(\displaystyle\sum_{j=i+1}^n(1))\\
+&= \displaystyle\sum_{i=1}^{n-1}(n-(i+1)+1)\\
+&= \displaystyle\sum_{i=1}^{n-1}(n-i)\\
+&= n(n-1)-\displaystyle\sum_{i=1}^{n-1}(i)\\
+&= n(n-1)-\frac{n(n-1)}{2}\\
+&= \frac{n(n-1)}{2}\\
+&= \frac{n^2}{2} - \frac{n}{2}\\
+&\Theta(n^2)
+\end{split}
+\end{equation}
+\end{frame}
+%------------------------------------------------------------------
+\subsection{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item \textbf{Basis:} Comparison
+\item \textbf{Time Complexity:}
+\begin{itemize}
+\item Number of comparisons is $\Theta(n^2)$
+\item Number of swaps is $\Theta(n)$.
+\end{itemize}
+\item \textbf{Space Complexity:} Constant (in place).
+\item \textbf{Stability:} Not Stable
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\defverbatim[colored]\bub{
+\begin{lstlisting}[style = custom]
+for i=n to 1:
+	for j=1 to i-1:
+		if T[j] > T[j+1]
+			SWAP(T[j],T[j+1]
+		endif
+	endfor
+endfor
+\end{lstlisting}
+}
+\section{Bubble Sort}
+\begin{frame}
+\frametitle{Bubble sort}
+\begin{enumerate}
+\item Scan the array, swapping any out of order neighbouring elements.
+\item Once the largest element is in the last position, the procedure is repeated to find the next largest, and so on.
+\bub
+\end{enumerate}
+\end{frame}
+%--------------------------------------------------------------
+\subsection{Analysis}
+\begin{frame}
+\frametitle{Analysis}
+\begin{itemize}
+\item Fundamental operation: \texttt{T[j] > T[j+1]}.
+\item Worst case: All cases are the same.
+\item Complexity function:
+\end{itemize}
+\begin{equation}
+\tiny
+\begin{split}
+t(n) & = \displaystyle\sum_{i=1}^{n}(\displaystyle\sum_{j=1}^{i-1}(1))\\
+&= \displaystyle\sum_{i=1}^{n}(i-1)\\
+&= \displaystyle\sum_{i=1}^{n}(i)-\displaystyle\sum_{i=1}^n(1)\\
+&= \displaystyle\sum_{i=1}^{n}(i-n)\\
+&= \frac{n(n-1)}{2}-n\\
+&= \frac{n^2}{2} + \frac{n}{2} - n\\
+&= \frac{n^2}{1} - \frac{n}{2}\\
+&\Theta(n^2)
+\end{split}
+\end{equation}
+\end{frame}
+%--------------------------------------------------------------
+\subsection{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item \textbf{Basis:} Comparison
+\item \textbf{Time Complexity:}
+\begin{itemize}
+\item Number of comparisons is $\Theta(n^2)$.
+\item Number of swaps is $\Theta(n^2)$.
+\end{itemize}
+\item \textbf{Space Complexity:} Constant (in place sorting)
+\item \textbf{Stability:} Stable
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\ins{
+\begin{lstlisting}[style = custom]
+for i=2 to n:
+	temp = T[i]
+	j = i-1
+	while j > 0 and temp < T[j]
+		T[j+1] = T[j]
+		j = j-1
+	endwhile
+	T[j+1] = temp
+endfor
+\end{lstlisting}
+}
+\section{Insertion Sort}
+\begin{frame}
+\frametitle{Insertion Sort}
+\begin{enumerate}
+\item A list size 1 is already sorted.
+\item Insert the element in position 2 into the already sorted list.
+\item From position 3 to n repreat the steps above
+\ins
+\end{enumerate}
+\end{frame}
+
+%----------------------------------------------------------------
+\subsection{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item \textbf{Basis:} Comparison
+\item \textbf{Time Complexity:}
+\begin{itemize}
+\item Worst Case and Average Case:
+\begin{itemize}
+\item Number of Comparisons: $O(n^2)$
+\item Number of swaps: $O(n^2)$
+\end{itemize}
+\item Best case:
+\begin{itemize}
+\item O(n).
+\end{itemize}
+\end{itemize}
+\item \textbf{Space Complexity:} Constant (in place)
+\item \textbf{Stability:} Stable.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\begin{frame} 
+\Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}
