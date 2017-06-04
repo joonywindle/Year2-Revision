@@ -1,0 +1,177 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+
+\lstdefinestyle{custom}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\ttfamily\bfseries\color{green!40!black},
+  commentstyle=\ttfamily\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  tabsize = 2
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Merge Sort]{Merge Sort} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame} 
+
+%------------------------------------------------------------------
+
+\section{Divide and Conquer}
+\begin{frame}
+\frametitle{Divide and Conquer}
+Base case: Single element, return.
+\begin{itemize}
+\item \textbf{Divide:} Split the problem up into two or more {\color{red}non-overlapping} sub-problems and solve there recursively.
+\item \textbf{Conquer:} Recombine the solutions of the sub-problems.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------
+\defverbatim[colored]\merg{
+\begin{lstlisting}[style = custom]
+array[] left, right, full
+if low == high:
+	return T[low]
+mid = floor((low+high)/2)
+// Divide and recursively solve....
+left = mergeSort(T[low..mid])
+right = mergeSort(T[mid+1...high])
+// Conquer
+full = merge(left,right)
+return full
+\end{lstlisting}
+}
+\section{Merge Sort}
+\begin{frame}
+\frametitle{Merge Sort}
+\begin{enumerate}
+\item Split array into two halves, left and right.
+\item \texttt{mergeSort} left and right.
+\item Merge the two sorted halves into a single sorted array.
+\merg
+\end{enumerate}
+\end{frame}
+%----------------------------------------------------------------
+\subsection{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item Merge sort is a worst case and average case $O(nlogn)$ 
+\item Is stable
+\item Performs $O(nlogn)$ swaps in the worst case.
+\item Can be optimised to see if the merge is necessary, this makes it $O(n)$ in the best case.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\begin{frame} 
+\Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Divide and Conquer}{3}{0}{1}
+\beamer@sectionintoc {2}{Merge Sort}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Summary}{5}{0}{2}
