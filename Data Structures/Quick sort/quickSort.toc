@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Algorithm}{4}{0}{2}
+\beamer@sectionintoc {3}{Choosing a Pivot}{5}{0}{3}
+\beamer@sectionintoc {4}{In place partitioning}{6}{0}{4}
+\beamer@sectionintoc {5}{Summary}{8}{0}{5}

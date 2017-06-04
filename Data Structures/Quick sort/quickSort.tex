@@ -1,0 +1,228 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+
+\lstdefinestyle{custom}{
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\ttfamily\bfseries\color{green!40!black},
+  commentstyle=\ttfamily\itshape\color{gray!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  tabsize = 2
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Merge Sort]{Merge Sort} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jonathan Windle} % Your name
+\institute[UEA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of East Anglia \\ % Your institution for the title page
+\medskip
+\textit{J.Windle@uea.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame} 
+
+%------------------------------------------------------------------
+\section{Intro}
+\begin{frame}
+\frametitle{Intro}
+\begin{itemize}
+\item It is a divide and conquer algorithm.
+\item Partitions the existing array by rearranging the existing elements.
+\item Partitions by chooding a pivot value, then swapping the elements so that all the elements to the left of the pivot are smaller than those on the right.
+\end{itemize}
+\begin{enumerate}
+\item If the number of elements is size 0 or 1, then return.
+\item Pick an element $v$ in $T$ as the $pivot$ element.
+\item Partition $T$ without $v$ into two groups, the left group, $L$ consisting of elements smaller than or equal to $v$ and the right group $R$ consisting of elements greater than $v$.
+\item $L$ = \texttt{quickSort($L$)} and $R$ = \texttt{quickSort($R$)}
+\item return result of $L+pivot+R$.
+\end{enumerate}
+\end{frame}
+%---------------------------------------------------------------
+\defverbatim[colored]\quick{
+\begin{lstlisting}[style = custom]
+if(low == high)
+	return T[low]
+if(high > low)
+	return null
+pivot = choosePivot()
+left = partitionLeft()
+right = partitionRight()
+left = quickSort(left)
+right = quickSort(right)
+full = left+pivot+right
+\end{lstlisting}
+}
+\section{Algorithm}
+\begin{frame}
+\frametitle{Algorithm}
+\quick
+\end{frame}
+%--------------------------------------------------------------
+\section{Choosing a Pivot}
+\begin{frame}
+\frametitle{Choosing a Pivot}
+\begin{itemize}
+\item Idea pivot would split the array exactly in two
+\item The middle value of set of numbers is the median
+\item Finding the median takes time
+\item Usual strategy is to take k elements randomly and then take the median of these.
+\item Cmmonly used extension involves taking the medians of medians.
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------
+\defverbatim[colored]\partit{
+\begin{lstlisting}[style = custom]
+temp = T[start]
+T[start] = T[pivotPos]
+T[pivotPos] = temp
+left = start+1
+right = end
+while left <= right:
+	while T[left]<=T[start]:
+		left++
+	while T[right]>T[start]:
+		right++
+	if left>right:
+		temp = T[left]
+		T[left] = T[right]
+		T[right] = temp
+	left++
+	right--
+temp = T[start]
+T[start] = T[right]
+T[right] = temp
+\end{lstlisting}
+}
+\section{In place partitioning}
+\begin{frame}[allowframebreaks]
+\frametitle{In place partitioning}
+\begin{enumerate}
+\item Swap the pivot out of the way and set left and right to start+1.
+\item Repeat until left $>$ right:
+\begin{enumerate}
+\item Advance the left pointer until the next element that should be in the right partition or end of array
+\item Decrease the right pointer until the next element that should be in the left partition
+\item Swap T[left] and T[right]
+\item Add one to left and subtract one from right.
+\end{enumerate}
+\item Swap pivot with the last element in left partition: T[right]
+\end{enumerate}
+\partit
+\end{frame}
+%----------------------------------------------------------------
+\section{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item Quick sort is average case: $O(nlog)$ based on comparison.
+\item Worst case is: $O(n^2)$ with standard pivoting methods.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------
+\begin{frame} 
+\Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}
