@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Intro}{3}{0}{1}
+\beamer@sectionintoc {2}{Terminology}{4}{0}{2}
+\beamer@sectionintoc {3}{Transport Protocol Data Unit}{5}{0}{3}
+\beamer@sectionintoc {4}{Consequence of Errors}{6}{0}{4}
+\beamer@sectionintoc {5}{Stop and Wait protocol}{7}{0}{5}
+\beamer@subsectionintoc {5}{1}{Some notes}{8}{0}{5}
+\beamer@subsectionintoc {5}{2}{Example With Numbering}{9}{0}{5}
+\beamer@subsectionintoc {5}{3}{Review}{10}{0}{5}
+\beamer@sectionintoc {6}{Sliding Window Protocols}{11}{0}{6}
+\beamer@subsectionintoc {6}{1}{Go back N}{12}{0}{6}
+\beamer@subsubsectionintoc {6}{1}{1}{Example}{13}{0}{6}
+\beamer@sectionintoc {7}{Selective Repeat}{14}{0}{7}
+\beamer@subsectionintoc {7}{1}{Example}{15}{0}{7}
+\beamer@sectionintoc {8}{Summary}{16}{0}{8}
