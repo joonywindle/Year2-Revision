@@ -1,0 +1,11 @@
+\BOOKMARK [2][]{Outline0.1}{Cooperating Processes}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Shared Memory IPC}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Critical Sections}{}% 3
+\BOOKMARK [3][]{Outline0.3.1.6}{Guaranteeing Mutual Exclusion}{Outline0.3}% 4
+\BOOKMARK [3][]{Outline0.3.2.7}{Coroutines}{Outline0.3}% 5
+\BOOKMARK [3][]{Outline0.3.3.8}{Software Semaphores}{Outline0.3}% 6
+\BOOKMARK [3][]{Outline0.3.4.10}{Hardware Support}{Outline0.3}% 7
+\BOOKMARK [2][]{Outline0.4}{Test-and-Set-Lock}{}% 8
+\BOOKMARK [3][]{Outline0.4.1.12}{Using TSL}{Outline0.4}% 9
+\BOOKMARK [3][]{Outline0.4.2.13}{TSL-Summary}{Outline0.4}% 10
+\BOOKMARK [2][]{Outline0.5}{Summary}{}% 11
