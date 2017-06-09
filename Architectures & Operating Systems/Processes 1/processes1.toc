@@ -1,0 +1,22 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{POSIX}{4}{0}{1}
+\beamer@sectionintoc {2}{Multiprogramming}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Three Views}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Side Effects}{7}{0}{2}
+\beamer@subsectionintoc {2}{3}{Process vs Program}{8}{0}{2}
+\beamer@subsectionintoc {2}{4}{Process Creation}{9}{0}{2}
+\beamer@subsectionintoc {2}{5}{Process Termination}{9}{0}{2}
+\beamer@subsectionintoc {2}{6}{Process Hierarchies}{11}{0}{2}
+\beamer@subsectionintoc {2}{7}{Process States}{12}{0}{2}
+\beamer@subsectionintoc {2}{8}{Process Model}{13}{0}{2}
+\beamer@subsectionintoc {2}{9}{Implementation of Processes}{14}{0}{2}
+\beamer@subsectionintoc {2}{10}{Modelling Multiprogramming}{15}{0}{2}
+\beamer@subsectionintoc {2}{11}{Execution Modes}{16}{0}{2}
+\beamer@sectionintoc {3}{Threads}{17}{0}{3}
+\beamer@subsectionintoc {3}{1}{Single-Threaded vs Multithreaded Processes}{18}{0}{3}
+\beamer@subsectionintoc {3}{2}{Advantages of Threads}{19}{0}{3}
+\beamer@subsectionintoc {3}{3}{Thread States}{20}{0}{3}
+\beamer@subsectionintoc {3}{4}{Implementing Threads}{21}{0}{3}
+\beamer@subsectionintoc {3}{5}{Threads in User Space}{22}{0}{3}
+\beamer@subsectionintoc {3}{6}{Threads in Kernel Space}{23}{0}{3}
+\beamer@sectionintoc {4}{Summary}{24}{0}{4}
