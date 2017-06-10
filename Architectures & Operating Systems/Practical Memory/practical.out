@@ -1,0 +1,12 @@
+\BOOKMARK [2][]{Outline0.1}{Memory Management Unit}{}% 1
+\BOOKMARK [3][]{Outline0.1.1.4}{Provides}{Outline0.1}% 2
+\BOOKMARK [3][]{Outline0.1.2.5}{Segment/page table}{Outline0.1}% 3
+\BOOKMARK [3][]{Outline0.1.3.6}{Mapping}{Outline0.1}% 4
+\BOOKMARK [2][]{Outline0.2}{Paging}{}% 5
+\BOOKMARK [3][]{Outline0.2.1.8}{Page Table Entries}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.2.9}{MMU registers for Paged Virtual Memory}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.3.10}{Page Faults}{Outline0.2}% 8
+\BOOKMARK [2][]{Outline0.3}{Working Sets}{}% 9
+\BOOKMARK [3][]{Outline0.3.1.12}{Working Sets Example}{Outline0.3}% 10
+\BOOKMARK [3][]{Outline0.3.2.13}{Pagin and Segmentation}{Outline0.3}% 11
+\BOOKMARK [2][]{Outline0.4}{Summary}{}% 12
