@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{File System Requirements}{3}{0}{1}
+\beamer@sectionintoc {2}{Definition}{4}{0}{2}
+\beamer@sectionintoc {3}{Data Hierarchy}{5}{0}{3}
+\beamer@sectionintoc {4}{File System}{6}{0}{4}
+\beamer@sectionintoc {5}{Directories}{7}{0}{5}
+\beamer@sectionintoc {6}{Links}{8}{0}{6}
+\beamer@sectionintoc {7}{File Allocation Schemes}{9}{0}{7}
+\beamer@subsectionintoc {7}{1}{Contiguous Allocation}{10}{0}{7}
+\beamer@subsectionintoc {7}{2}{Linked-List File Allocation}{11}{0}{7}
+\beamer@subsectionintoc {7}{3}{File Allocation Table (FAT)}{12}{0}{7}
+\beamer@subsectionintoc {7}{4}{Indexed File Allocation}{13}{0}{7}
+\beamer@subsectionintoc {7}{5}{Linked-Indexed Allocation}{15}{0}{7}
+\beamer@subsectionintoc {7}{6}{Multilevel-Indexed File Allocation}{16}{0}{7}
+\beamer@subsectionintoc {7}{7}{UNIX - inodes}{17}{0}{7}
+\beamer@subsectionintoc {7}{8}{Managing Free Space}{19}{0}{7}

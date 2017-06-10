@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Secondary Storage}{3}{0}{1}
+\beamer@sectionintoc {2}{Hard Drives}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Issues}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Typical Disk Access Operations}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Read-Write Latency}{7}{0}{2}
+\beamer@sectionintoc {3}{Disk Scheduling}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{First come first served}{9}{0}{3}
+\beamer@subsectionintoc {3}{2}{Shortest-seek-time-first}{10}{0}{3}
+\beamer@subsectionintoc {3}{3}{Elevator Algorithm (SCAN)}{11}{0}{3}
+\beamer@subsectionintoc {3}{4}{Circular-SCAN (C-SCAN)}{12}{0}{3}
+\beamer@subsectionintoc {3}{5}{Freeze-SCAN (F-SCAN)}{13}{0}{3}
+\beamer@subsectionintoc {3}{6}{Where its performed}{14}{0}{3}
+\beamer@subsectionintoc {3}{7}{Other performance factors}{15}{0}{3}
+\beamer@sectionintoc {4}{Summary}{16}{0}{4}
