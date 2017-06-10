@@ -1,0 +1,20 @@
+\BOOKMARK [2][]{Outline0.1}{Terminology}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Requirements}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Memory Hierarchy}{}% 3
+\BOOKMARK [3][]{Outline0.3.1.7}{Memory Usage}{Outline0.3}% 4
+\BOOKMARK [3][]{Outline0.3.2.8}{Memory Binding}{Outline0.3}% 5
+\BOOKMARK [2][]{Outline0.4}{Memory Management}{}% 6
+\BOOKMARK [3][]{Outline0.4.1.9}{Uniprogramming Memory Management}{Outline0.4}% 7
+\BOOKMARK [3][]{Outline0.4.2.10}{Multiprogramming Memory Addressing}{Outline0.4}% 8
+\BOOKMARK [2][]{Outline0.5}{Static Translation}{}% 9
+\BOOKMARK [3][]{Outline0.5.1.12}{Problems}{Outline0.5}% 10
+\BOOKMARK [2][]{Outline0.6}{Dynamic Translation}{}% 11
+\BOOKMARK [3][]{Outline0.6.1.14}{Alternate...}{Outline0.6}% 12
+\BOOKMARK [3][]{Outline0.6.2.15}{Diagram}{Outline0.6}% 13
+\BOOKMARK [2][]{Outline0.7}{Memory Segmentation}{}% 14
+\BOOKMARK [3][]{Outline0.7.1.16}{Fixed and Equal-Sized Memory Segments}{Outline0.7}% 15
+\BOOKMARK [3][]{Outline0.7.2.17}{Fixed and Unequal-sized Memory Segments}{Outline0.7}% 16
+\BOOKMARK [3][]{Outline0.7.3.18}{Limitations}{Outline0.7}% 17
+\BOOKMARK [2][]{Outline0.8}{Memory Protection}{}% 18
+\BOOKMARK [2][]{Outline0.9}{Allocating processes}{}% 19
+\BOOKMARK [2][]{Outline0.10}{Summary}{}% 20
