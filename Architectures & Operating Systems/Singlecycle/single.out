@@ -1,0 +1,12 @@
+\BOOKMARK [2][]{Outline0.1}{State Machines}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Instruction and Data Memories}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Instruction Fetch}{}% 3
+\BOOKMARK [2][]{Outline0.4}{R-type recap}{}% 4
+\BOOKMARK [2][]{Outline0.5}{Register File and ALU}{}% 5
+\BOOKMARK [2][]{Outline0.6}{Executing R-type Instructions}{}% 6
+\BOOKMARK [2][]{Outline0.7}{I-Type Instruction Recap}{}% 7
+\BOOKMARK [2][]{Outline0.8}{Executing Load/Store Instructions}{}% 8
+\BOOKMARK [2][]{Outline0.9}{ALUSrc Control Signal}{}% 9
+\BOOKMARK [2][]{Outline0.10}{MemToReg Control Signal}{}% 10
+\BOOKMARK [2][]{Outline0.11}{RegDest Control Signal}{}% 11
+\BOOKMARK [2][]{Outline0.12}{Branch Instruction Recap}{}% 12

@@ -1,0 +1,13 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{State Machines}{3}{0}{1}
+\beamer@sectionintoc {2}{Instruction and Data Memories}{4}{0}{2}
+\beamer@sectionintoc {3}{Instruction Fetch}{5}{0}{3}
+\beamer@sectionintoc {4}{R-type recap}{6}{0}{4}
+\beamer@sectionintoc {5}{Register File and ALU}{7}{0}{5}
+\beamer@sectionintoc {6}{Executing R-type Instructions}{8}{0}{6}
+\beamer@sectionintoc {7}{I-Type Instruction Recap}{9}{0}{7}
+\beamer@sectionintoc {8}{Executing Load/Store Instructions}{10}{0}{8}
+\beamer@sectionintoc {9}{ALUSrc Control Signal}{11}{0}{9}
+\beamer@sectionintoc {10}{MemToReg Control Signal}{12}{0}{10}
+\beamer@sectionintoc {11}{RegDest Control Signal}{13}{0}{11}
+\beamer@sectionintoc {12}{Branch Instruction Recap}{14}{0}{12}
