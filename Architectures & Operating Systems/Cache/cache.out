@@ -1,0 +1,29 @@
+\BOOKMARK [2][]{Outline0.1}{Principle of locality}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Basics}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Cache hits and misses}{}% 3
+\BOOKMARK [2][]{Outline0.4}{A basic cache design}{}% 4
+\BOOKMARK [2][]{Outline0.5}{Memory to cache mapping}{}% 5
+\BOOKMARK [2][]{Outline0.6}{Cache tags}{}% 6
+\BOOKMARK [2][]{Outline0.7}{Valid bit}{}% 7
+\BOOKMARK [2][]{Outline0.8}{Cache hit}{}% 8
+\BOOKMARK [2][]{Outline0.9}{Cache miss}{}% 9
+\BOOKMARK [2][]{Outline0.10}{Cache example}{}% 10
+\BOOKMARK [2][]{Outline0.11}{Cache sizes}{}% 11
+\BOOKMARK [2][]{Outline0.12}{Cache performance}{}% 12
+\BOOKMARK [3][]{Outline0.12.1.17}{Example}{Outline0.12}% 13
+\BOOKMARK [2][]{Outline0.13}{Larger Block Sizes}{}% 14
+\BOOKMARK [2][]{Outline0.14}{Placement of bytes within a block}{}% 15
+\BOOKMARK [2][]{Outline0.15}{Building byte address}{}% 16
+\BOOKMARK [2][]{Outline0.16}{Examples}{}% 17
+\BOOKMARK [2][]{Outline0.17}{Problem with direct mapping}{}% 18
+\BOOKMARK [2][]{Outline0.18}{Fully associative cache}{}% 19
+\BOOKMARK [2][]{Outline0.19}{Set associative cache}{}% 20
+\BOOKMARK [2][]{Outline0.20}{Set associative cache addressing}{}% 21
+\BOOKMARK [3][]{Outline0.20.1.26}{Example}{Outline0.20}% 22
+\BOOKMARK [2][]{Outline0.21}{Block replacement strategies}{}% 23
+\BOOKMARK [2][]{Outline0.22}{Writing to memory}{}% 24
+\BOOKMARK [3][]{Outline0.22.1.29}{Write-through cache}{Outline0.22}% 25
+\BOOKMARK [3][]{Outline0.22.2.30}{Write-back cache}{Outline0.22}% 26
+\BOOKMARK [2][]{Outline0.23}{Write misses}{}% 27
+\BOOKMARK [2][]{Outline0.24}{Cache organisations}{}% 28
+\BOOKMARK [2][]{Outline0.25}{Larger cache blocks and memory bandwidth}{}% 29

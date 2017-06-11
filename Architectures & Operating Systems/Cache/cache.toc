@@ -1,0 +1,30 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Principle of locality}{4}{0}{1}
+\beamer@sectionintoc {2}{Basics}{5}{0}{2}
+\beamer@sectionintoc {3}{Cache hits and misses}{6}{0}{3}
+\beamer@sectionintoc {4}{A basic cache design}{7}{0}{4}
+\beamer@sectionintoc {5}{Memory to cache mapping}{8}{0}{5}
+\beamer@sectionintoc {6}{Cache tags}{10}{0}{6}
+\beamer@sectionintoc {7}{Valid bit}{11}{0}{7}
+\beamer@sectionintoc {8}{Cache hit}{12}{0}{8}
+\beamer@sectionintoc {9}{Cache miss}{13}{0}{9}
+\beamer@sectionintoc {10}{Cache example}{14}{0}{10}
+\beamer@sectionintoc {11}{Cache sizes}{15}{0}{11}
+\beamer@sectionintoc {12}{Cache performance}{16}{0}{12}
+\beamer@subsectionintoc {12}{1}{Example}{17}{0}{12}
+\beamer@sectionintoc {13}{Larger Block Sizes}{18}{0}{13}
+\beamer@sectionintoc {14}{Placement of bytes within a block}{19}{0}{14}
+\beamer@sectionintoc {15}{Building byte address}{20}{0}{15}
+\beamer@sectionintoc {16}{Examples}{21}{0}{16}
+\beamer@sectionintoc {17}{Problem with direct mapping}{22}{0}{17}
+\beamer@sectionintoc {18}{Fully associative cache}{23}{0}{18}
+\beamer@sectionintoc {19}{Set associative cache}{24}{0}{19}
+\beamer@sectionintoc {20}{Set associative cache addressing}{25}{0}{20}
+\beamer@subsectionintoc {20}{1}{Example}{26}{0}{20}
+\beamer@sectionintoc {21}{Block replacement strategies}{27}{0}{21}
+\beamer@sectionintoc {22}{Writing to memory}{28}{0}{22}
+\beamer@subsectionintoc {22}{1}{Write-through cache}{29}{0}{22}
+\beamer@subsectionintoc {22}{2}{Write-back cache}{30}{0}{22}
+\beamer@sectionintoc {23}{Write misses}{31}{0}{23}
+\beamer@sectionintoc {24}{Cache organisations}{32}{0}{24}
+\beamer@sectionintoc {25}{Larger cache blocks and memory bandwidth}{33}{0}{25}
