@@ -7,7 +7,7 @@
 \beamer@subsectionintoc {2}{1}{Page Table Entries}{8}{0}{2}
 \beamer@subsectionintoc {2}{2}{MMU registers for Paged Virtual Memory}{9}{0}{2}
 \beamer@subsectionintoc {2}{3}{Page Faults}{10}{0}{2}
-\beamer@sectionintoc {3}{Working Sets}{11}{0}{3}
-\beamer@subsectionintoc {3}{1}{Working Sets Example}{12}{0}{3}
-\beamer@subsectionintoc {3}{2}{Pagin and Segmentation}{13}{0}{3}
-\beamer@sectionintoc {4}{Summary}{14}{0}{4}
+\beamer@sectionintoc {3}{Working Sets}{12}{0}{3}
+\beamer@subsectionintoc {3}{1}{Working Sets Example}{13}{0}{3}
+\beamer@subsectionintoc {3}{2}{Pagin and Segmentation}{14}{0}{3}
+\beamer@sectionintoc {4}{Summary}{15}{0}{4}

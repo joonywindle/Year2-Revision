@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  10 JUN 2017 13:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.19)  11 JUN 2017 18:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -935,7 +935,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./practical.toc)
 [2
 
-] <loc.png, id=148, 640.3925pt x 338.26375pt>
+] <loc.png, id=154, 640.3925pt x 338.26375pt>
 File: loc.png Graphic file (type png)
  <use loc.png>
 Package pdftex.def Info: loc.png used on input line 148.
@@ -945,14 +945,14 @@ Package pdftex.def Info: loc.png used on input line 148.
  <./loc.png>]
 [4
 
-] <segtab.png, id=202, 678.535pt x 395.4775pt>
+] <segtab.png, id=208, 678.535pt x 395.4775pt>
 File: segtab.png Graphic file (type png)
  <use segtab.png>
 Package pdftex.def Info: segtab.png used on input line 167.
 (pdftex.def)             Requested size: 339.26666pt x 197.73827pt.
  [5
 
- <./segtab.png>] <mapping.png, id=228, 682.55pt x 351.3125pt>
+ <./segtab.png>] <mapping.png, id=234, 682.55pt x 351.3125pt>
 File: mapping.png Graphic file (type png)
  <use mapping.png>
 Package pdftex.def Info: mapping.png used on input line 172.
@@ -961,7 +961,7 @@ Package pdftex.def Info: mapping.png used on input line 172.
 
  <./mapping.png>] [7
 
-] <pEntry.png, id=281, 645.41125pt x 85.31876pt>
+] <pEntry.png, id=287, 645.41125pt x 85.31876pt>
 File: pEntry.png Graphic file (type png)
  <use pEntry.png>
 Package pdftex.def Info: pEntry.png used on input line 212.
@@ -969,7 +969,7 @@ Package pdftex.def Info: pEntry.png used on input line 212.
 
 [8
 
- <./pEntry.png>] <deman.png, id=308, 691.58376pt x 417.56pt>
+ <./pEntry.png>] <deman.png, id=314, 691.58376pt x 417.56pt>
 File: deman.png Graphic file (type png)
  <use deman.png>
 Package pdftex.def Info: deman.png used on input line 227.
@@ -977,26 +977,26 @@ Package pdftex.def Info: deman.png used on input line 227.
 
 [9
 
- <./deman.png>]
-Overfull \vbox (40.87392pt too high) detected at line 260
- []
-
-[10
+ <./deman.png>] [10
 
 ] [11
 
-] <setex.png, id=385, 730.73pt x 390.45876pt>
+
+] [12
+
+] <setex.png, id=416, 730.73pt x 390.45876pt>
 File: setex.png Graphic file (type png)
- <use setex.png>
+
+<use setex.png>
 Package pdftex.def Info: setex.png used on input line 296.
 (pdftex.def)             Requested size: 255.75932pt x 136.6626pt.
- [12
+ [13
 
- <./setex.png>] [13
-
-] [14
+ <./setex.png>] [14
 
 ] [15
+
+] [16
 
 ]
 \tf@nav=\write6
@@ -1020,8 +1020,8 @@ Package rerunfilecheck Warning: File `practical.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `practical.out':
-(rerunfilecheck)             Before: 8938FAAE2E54CF79B103D699CE2ECCD6;684
-(rerunfilecheck)             After:  C4E131808F6512C055ABB84F997FC8CB;727.
+(rerunfilecheck)             Before: C4E131808F6512C055ABB84F997FC8CB;727
+(rerunfilecheck)             After:  9B84020A99655AEBA6E33B071B815338;727.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1029,23 +1029,29 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
  ) 
 Here is how much of TeX's memory you used:
- 17634 strings out of 494910
- 321299 string characters out of 6179836
- 401528 words of memory out of 5000000
- 20480 multiletter control sequences out of 15000+600000
+ 17644 strings out of 494910
+ 321400 string characters out of 6179836
+ 400528 words of memory out of 5000000
+ 20486 multiletter control sequences out of 15000+600000
  6708 words of font info for 24 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  49i,16n,60p,398b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmssi8.pfb>
-Output written on practical.pdf (15 pages, 201622 bytes).
+pdfTeX warning (dest): name{Outline0.3.2.13} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.3.1.12} has been referenced but does not e
+xist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmssi8.pfb>
+Output written on practical.pdf (16 pages, 203199 bytes).
 PDF statistics:
- 525 PDF objects out of 1000 (max. 8388607)
- 478 compressed objects within 5 object streams
- 43 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 558 PDF objects out of 1000 (max. 8388607)
+ 509 compressed objects within 6 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
